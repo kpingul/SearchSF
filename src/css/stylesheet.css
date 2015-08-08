@@ -357,3 +357,31 @@ address
     filter: alpha(opacity = 75);
 }
 
+
+
+/* Media Break Point 1 */
+
+@media (max-width: 500px) {
+    .searchVenueBody{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .SearchVenuePhoto{
+        width: 250px;
+       margin: 0 auto;
+
+
+    }
+    .searchVenueAddressContainer{
+        display: block;
+        text-align: center;
+        font-weight: bold;
+
+    }
+    .SearchVenuePhotoContainer{
+        display: block;
+    }
+
+}
