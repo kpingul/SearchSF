@@ -1,0 +1,243 @@
+<!--_________________________________________________________________-->
+<!--   Contains the Specific Venue requested from User               -->
+<!--__________________________________________________________________-->
+
+
+<div class="container VenueContainer">
+	
+	<div class="row">
+		
+
+		<div class="page-header">
+
+			<h1>{{::vm.venue.name}}</h1>
+
+			<h1>
+			 	<small>{{::vm.venue.categories[0].name}} &middot; {{::vm.venue.categories[1].name}}</small>
+			</h1>
+
+		</div><!-- end of page header -->
+
+		<!-- Angular Slick Carousel Plugin -->
+
+		<slick arrows="true" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" data="vm.venue.photos.groups[0].items" init-onload="true" responsive="vm.slickBP">
+
+
+			<div ng-repeat="photo in ::vm.venue.photos.groups[0].items">
+					
+	  			 <div class="img-wrap" >
+
+    				<img class="img-responsive" src="{{::photo.prefix}}300x300{{::photo.suffix}}" alt="">
+
+			        <div class="img-info">
+			            <h4><strong>{{::photo.user.firstName}} {{::photo.user.lastName}} </strong></h4>
+			            <p>on {{::photo.createdAt | timefilter}}</p>
+			        </div>
+			    </div>
+
+
+	  		</div>
+	  
+
+		
+		</slick><!-- end of slick carousel -->
+
+
+		<h4 class="text-center" >	
+			<a href="#" venue-photo-gallery venueId="{{vm.venueID}}">See all photos</a>
+		</h4>
+
+
+	</div><!-- end of row -->
+
+
+	<div class="row">
+
+		<div class="col-md-9">
+
+			<div class="col-md-4">
+				
+				<div class="panel panel-default">
+
+				  <div class="panel-body">
+
+					<address>
+
+						<p class="businessRatingContainer">
+
+							<strong><span class="businessRating">{{::vm.venue.rating}}</span> Based on {{::vm.venue.ratingSignals}} ratings </strong>
+
+						</p>
+
+						<strong class="addressName">{{::vm.venue.name}}</strong><br>
+
+						 <strong>{{::vm.venue.location.address}}<br>
+
+						 {{::vm.venue.location.city}}, {{::vm.venue.location.state}} {{::vm.venue.location.postalCode}}</strong><br>
+
+						 <span class="glyphicon glyphicon-earphone"></span>{{::vm.venue.contact.formattedPhone}}<br>
+
+					 	<span class="glyphicon glyphicon-new-window"></span> 
+
+						<a href="{{::vm.venue.url}}">{{::vm.venue.name | lowercase}}</a>
+
+					</address><!-- end of address -->
+		
+
+					<ul class="businessRatingList">
+						
+						<li>			
+							Total Visits  &middot;  {{::vm.venue.stats.visitsCount}}
+
+						</li>
+
+						<li>Total Checkins &middot; {{::vm.venue.stats.checkinsCount}}</li>
+
+					</ul><!-- end of business rating list -->
+
+			
+
+				  </div><!-- end of panel body -->
+
+				</div><!-- end of panel -->
+			
+				
+			</div><!-- end of column md-4 -->
+
+
+			
+		</div><!-- end of column md-9 -->
+		
+		<div class="col-md-3">
+			
+			<ul class="list-group businessInformation-panel">
+
+			  <li class="list-group-item"><span class="glyphicon glyphicon-time" ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}"></span> <strong>{{::vm.venue.hours.status}}</strong> </span></li>
+
+			  <li class="list-group-item"><span class="glyphicon glyphicon-cutlery"></span> <strong><a href="{{vm.venue.menu.url}}">View Menu</a></strong></li>
+
+			  <li class="list-group-item"><strong><span class="pricing">{{::vm.venue.attributes.groups[0].summary}}</span> Price Range</strong> <small>{{::vm.venue.price.message}}</small></li>
+			
+			</ul><!-- end of ul -->
+
+
+		</div><!-- end of column -->
+		
+	</div><!-- end of row -->
+
+	<div class="row">
+			
+			<div class="col-md-9">
+			
+		
+				<h2>Recommended Reviews</h2>
+
+				<ol class="breadcrumb">
+				  <li>Sort</li>
+				  <li><a href="" ng-click="sortType = '-createdAt'">Newest</a></li>
+				  <li><a href="" ng-click="sortType = 'createdAt'">Oldest</a></li>
+				  <li><a href="" ng-click="sortType = '-likes.count'">Most Likes</a></li>
+				  <li><a href="" ng-click="sortType = 'likes.count'">Least Likes</a></li>
+				</ol>
+
+				<ul class="userReviewList"> 
+					
+					<li ng-repeat="user in vm.venue.tips.groups[0].items |  orderBy: sortType | limitTo: vm.reviewLim ">
+			
+						<div class="media">
+
+						  <div class="media-left">
+
+						      <img class="media-object userReviewThumbnails" src="{{user.user.photo.prefix}}300x300{{user.user.photo.suffix}}" >
+
+						  </div>
+
+						  <div class="media-body">
+
+						    <h5 class="media-heading">
+								 {{user.text}}
+
+						    </h5>
+
+			    			<small  class="text-muted">{{user.user.firstName}} {{user.user.lastName}}  <strong>&middot;</strong> {{user.createdAt | timefilter}}  <strong>&middot;</strong> <span class="glyphicon glyphicon-heart" style="font-size: 0.9em"></span> {{user.likes.count}} likes</small>
+
+						  </div><!-- end of media body -->
+
+						</div><!-- end of media -->
+
+
+					</li><!-- end of ng repeat  user  values -->
+
+					<center>
+
+						<button ng-disabled="vm.reviewLim === vm.venue.tips.groups[0].items.length" view-more-reviews>View More</button>
+
+					<center>
+
+				</ul><!-- end of user review list -->
+				
+			</div><!-- end of column-->
+
+			<div class="col-md-3">
+
+				<div class="panel panel-default">
+
+					 <div class="panel-heading"><strong class="businessHoursTitle">Business Hours</strong></div>
+
+					  <div class="panel-body">
+				   		
+				   		<ul class="businessHoursList">
+
+				   			<li ng-repeat="time in ::vm.venue.hours.timeframes">
+
+				   				<p><strong>{{::time.days}}</strong> <span class="businessHourHours">{{::time.open[0].renderedTime}}</span><br>
+
+				   				<span ng-if="time.open[1].renderedTime" class="businessHourHours" >{{::time.open[1].renderedTime}}</span></p>
+
+				   			</li>
+
+
+				   		</ul><!-- end of business hours list -->
+
+				  </div><!-- end of panel body -->
+
+				</div><!-- end of panel -->
+
+
+				<div class="panel panel-default">
+
+					 <div class="panel-heading"><strong class="businessHoursTitle">More Business Info</strong></div>
+
+					  <div class="panel-body">
+				   		
+				   		<ul class="businessInformationList">
+
+				   			<li ng-repeat="info in ::vm.venue.attributes.groups">
+
+				   				{{::info.items[0].displayName}} - <strong>{{::info.items[0].displayValue}}</strong> 
+
+				   			</li>
+
+
+				   		</ul><!-- end of business InformationList list -->
+
+				  </div><!-- end of panel body -->
+
+				</div><!-- end of panel -->
+
+			</div><!-- end of col md 3 -->
+
+	</div><!-- end of row-->
+	
+	
+</div>	<!-- end of container -->
+
+
+
+	
+
+
+
+
+
+

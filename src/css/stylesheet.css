@@ -1,0 +1,359 @@
+body
+{
+    font-family: 'Raleway', sans-serif;
+}
+h2
+{
+    margin: 0;
+    margin-bottom: 2%;
+}
+.input-group
+{
+    width: 100%;
+}
+.input-group input
+{
+    width: 80%;
+}
+
+
+/* ************************************************* */
+/*                    Navigaition Section            */
+/* ************************************************* */
+.navbar
+{
+    background: #03156f;
+}
+.navbar-default .navbar-brand
+{
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover
+{
+    color: #fff;
+}
+.navbar-default .navbar-brand:visited
+{
+    color: #fff;
+}
+
+/* ************************************************* */
+/*                    Search Venue Section           */
+/* ************************************************* */
+
+.searchVenueList
+{
+    padding: 0;
+    list-style-type: none;
+}
+.searchVenueList li
+{
+    padding: 10px 0;
+
+    border-bottom: 1px solid #ECA729;
+}
+.searchVenueList li:first-child{
+        border-top: 1px solid #ECA729;
+
+}
+.SearchVenuePhoto
+{
+    width: 180px;
+}
+.searchVenueIndex{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.SearchVenueUserPhoto{
+    width: 30px;
+}
+.searchVenueBody
+{
+    letter-spacing: 0.05em;
+    width: 254px;
+}
+.searchVenueRating{
+     padding: 10px;
+
+    color: #fff;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    background: #006c00;
+}
+.searchVenueAddress{
+    line-height: 2.4em;
+}
+.dropDownSearchList{
+    float: left;
+    margin-left: 5%;
+}
+
+.innerDropDownSearchList{
+    padding: 0;
+    list-style-type: none;
+}
+
+.well {
+    background: #fff;
+    border: 0;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+        font-size: 1em;
+
+}
+
+#spinner.active {
+    display: block;
+}
+#spinner {
+    display: none;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 40%;
+    left: 48%;
+    z-index: 1;
+}
+.ball {
+    position: absolute;
+    display: block;
+    background-color: #03156f;
+    left: 24px;
+    width: 13px;
+    height: 13px;
+    border-radius: 6px;
+}
+#first {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+    -moz-animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 2s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 6px 30px;
+
+}
+#second {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+      -moz-animation-timing-function: cubic-bezier(0.5, 0.5, 0.9, 0.9);
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 2s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 6px 30px;
+}
+#third {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.7, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+      -moz-animation-timing-function: cubic-bezier(0.5, 0.7, 0.9, 0.9);
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 2s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 6px 30px;
+}
+#fourth {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.7, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+      -moz-animation-timing-function: cubic-bezier(0.5, 0.7, 0.9, 0.9);
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 2s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 6px 30px;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+  100% { 
+    -webkit-transform: rotate(1440deg) scale(1); 
+  }
+}​
+
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform: rotate(0deg) scale(1);
+  }
+  100% { 
+    -moz-transform: rotate(1440deg) scale(1); 
+  }
+}
+
+.loadingOverlay
+{
+    opacity: .60 !important; /* Make sure to change both of these, as IE only sees the second one */
+
+}
+.activeLink, .activeLink a{
+    font-weight: bold;
+    color: #000;
+    font-size: 1.050em;
+
+}
+
+/* ************************************************* */
+/*                    Single Venue Section           */
+/* ************************************************* */
+.multiple-items
+{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.page-header
+{
+    margin: 0;
+}
+.userReviewList
+{
+    line-height: 1.9em;
+
+    padding: 0;
+
+    list-style-type: none;
+}
+.userReviewList li
+{
+    padding: 10px 0;
+}
+
+.glyphicon-time,
+.glyphicon-cutlery,
+.pricing
+{
+    font-size: 1.5em;
+}
+.closedVenue
+{
+    color: #cd0000;
+}
+.openVenue
+{
+    color: #006c00;
+}
+.userReviewThumbnails
+{
+    width: 34px;
+}
+
+.businessHoursTitle
+{
+    color: #cd0000;
+}
+.businessHoursList
+{
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.businessHoursList li
+{
+    padding: 12px 0;
+}
+.businessHourHours
+{
+    float: right;
+}
+
+.addressName
+{
+    font-size: 1.3em;
+}
+address
+{
+    line-height: 1.5em;
+}
+.businessRatingList
+{
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.businessRating
+{
+    font-size: 1.8em;
+
+    margin-bottom: 10%;
+    padding: 18px;
+
+    color: #fff;
+    border-radius: 50%;
+    background: #006c00;
+}
+.businessInformation-panel li
+{
+    border: 1px solid #898989;
+    background: #ebebeb;
+}
+.businessRatingContainer
+{
+    padding: 12px 0;
+}
+.businessInformationList
+{
+    padding: 0;
+
+    list-style-type: none;
+}
+.businessInformationList li
+{
+    padding-bottom: 12px ;
+}
+.page-header
+{
+    text-align: center;
+}
+
+
+.img-wrap
+{
+    position: relative;
+
+    overflow: hidden;
+}
+.img-info
+{
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+
+    width: 100%;
+
+    opacity: 0;
+    color: #fff;
+    background-color: #000;
+
+    filter: alpha(opacity = 0);
+}
+.img-info h4,
+.img-info p
+{
+    font-size: .9em;
+
+    padding: 0 10px;
+}
+.img-wrap:hover .img-info
+{
+    -webkit-transition: opacity .25s;
+       -moz-transition: opacity .25s;
+            transition: opacity .25s;
+
+    opacity: .75;
+
+    filter: alpha(opacity = 75);
+}
+

@@ -1,0 +1,26 @@
+{
+  "name": "Search app",
+  "version": "0.0.0",
+  "authors": [
+    "kpingul <kirckpingul@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.3",
+    "angular-ui-router": "~0.2.15",
+    "slick-carousel": "~1.5.8",
+    "angular-slick": "~0.2.1",
+    "swipebox": "~1.4.1"
+  },
+  "resolutions": {
+    "slick-carousel": "~1.4.1"
+  }
+}

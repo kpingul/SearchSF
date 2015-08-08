@@ -1,0 +1,81 @@
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="bower_components/swipebox/src/css/swipebox.css">
+	<link rel="stylesheet" href="src/css/stylesheet.css">
+	<title>Search App</title>
+</head>
+<body>	
+
+	<!--_____________________-->
+	<!-- Main Navigation Bar -->
+	<!--_____________________-->
+
+	<nav class="navbar navbar-default">
+
+	  <div class="container-fluid">
+
+	    <div class="navbar-header">
+	   
+	      <a class="navbar-brand" ui-sref="main">SearchaFood Widget</a>
+
+	    </div><!-- end of navbar header -->
+
+	  </div><!-- end of container-fluid -->
+
+	</nav><!-- end of navigation bar -->
+
+
+
+	 
+	<!--_____________________-->
+	<!--    Main Container   -->
+	<!--_____________________-->
+
+
+	<div class="OuterMainContainer  ">
+		
+
+		<div ui-view>
+		
+			
+
+		</div>
+
+
+
+	</div><!-- end of container -->
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARJhGB267_hmjTvtYPewhGV63UPd7od1Q"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="bower_components/angular-slick/dist/slick.js"></script>
+<script src="bower_components/swipebox/src/js/jquery.swipebox.js"></script>
+
+
+<script src="src/js/app/app.js"></script>
+<script src="src/js/app/app.config.js"></script>
+<script src="src/js/app/Shared/BreakPoints.value.js"></script>
+<script src="src/js/app/Shared/FSDataService.service.js"></script>
+<script src="src/js/app/Shared/MapService.service.js"></script>
+<script src="src/js/app/Shared/TimeFilter.filter.js"></script>
+<script src="src/js/app/SearchVenue/controllers/SearchVenueCtrl.js"></script>
+<script src="src/js/app/SearchVenue/directives/DropDownSearchMenu.js"></script>
+<script src="src/js/app/SearchVenue/directives/DropDownSearchLoadingBar.js"></script>
+<script src="src/js/app/SingleVenue/controllers/SingleVenueCtrl.js"></script>
+<script src="src/js/app/SingleVenue/directives/SlickGallery.js"></script>
+<script src="src/js/app/SingleVenue/directives/ViewMoreReviews.js"></script>
+
+
+</body>
+</html>
