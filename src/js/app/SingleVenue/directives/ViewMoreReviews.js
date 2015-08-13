@@ -25,8 +25,9 @@
 
 				elem.on('click', function(event){
 
-					$timeout( function(){
 
+					$timeout( function(){
+					 	
 			  			scope.vm.reviewLim += addedLimit;
 
 			  		}, numOfMs);

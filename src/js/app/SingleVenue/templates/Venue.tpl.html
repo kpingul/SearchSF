@@ -6,18 +6,7 @@
 <div class="container VenueContainer">
 	
 	<div class="row">
-		
-
-		<div class="page-header">
-
-			<h1>{{::vm.venue.name}}</h1>
-
-			<h1>
-			 	<small>{{::vm.venue.categories[0].name}} &middot; {{::vm.venue.categories[1].name}}</small>
-			</h1>
-
-		</div><!-- end of page header -->
-
+	
 		<!-- Angular Slick Carousel Plugin -->
 
 		<slick arrows="true" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" data="vm.venue.photos.groups[0].items" init-onload="true" responsive="vm.slickBP">
@@ -53,22 +42,28 @@
 
 	<div class="row">
 
-		<div class="col-md-4">
+		<div class="col-md-8">
 
 						
 				<div class="panel panel-default">
 
-				  <div class="panel-body">
+				  <div class="panel-body" style="padding: 0; padding: 0px 20px">
+						
+					<span class="addressName">	
+						<h1>{{::vm.venue.name}}</h1>
 
-					<address>
+					
+											<p>{{::vm.venue.categories[0].name}} &middot; {{::vm.venue.categories[1].name}}</p>
+					</span>
 
-						<p class="businessRatingContainer">
+
+					<address class="businessInformationContainer">
+						
+
 
 							<strong><span class="businessRating">{{::vm.venue.rating}}</span> Based on {{::vm.venue.ratingSignals}} ratings </strong>
 
 						</p>
-
-						<strong class="addressName">{{::vm.venue.name}}</strong><br>
 
 						 <strong>{{::vm.venue.location.address}}<br>
 
@@ -80,21 +75,34 @@
 
 						<a href="{{::vm.venue.url}}">{{::vm.venue.name | lowercase}}</a>
 
+
 					</address><!-- end of address -->
 		
 
-					<ul class="businessRatingList">
+					<address class="businessMenu">
+
+				
+
+						<span><b>Hours</b>: <strong ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}">{{::vm.venue.hours.status}}</strong> </span>
+
+						<span><b>Price: </b> <strong class="pricing">{{::vm.venue.attributes.groups[0].summary}}</strong> {{::vm.venue.price.message}}</span>
+
+						<span ng-repeat="menu in vm.venue.attributes.groups | menufilter">
+
+							<span ng-if="menu.name === 'Menus'"><b>Menu</b> <strong class="glyphicon glyphicon-cutlery"></strong> : {{menu.summary}} <a href="{{vm.venue.menu.url}}"><small>(View Menu)</small></a></span>
+
+							<span ng-if="menu.name === 'Drinks'"><b>Drinks</b>: {{menu.summary}}</span>
+
+						</span>
+		
+						<span><b>Visits</b>  &middot;  {{::vm.venue.stats.visitsCount}}</span>
+
 						
-						<li>			
-							Total Visits  &middot;  {{::vm.venue.stats.visitsCount}}
+						<span>	<b>Checkins </b>&middot; {{::vm.venue.stats.checkinsCount}}</span>
 
-						</li>
 
-						<li>Total Checkins &middot; {{::vm.venue.stats.checkinsCount}}</li>
+					</address><!-- end of address -->
 
-					</ul><!-- end of business rating list -->
-
-			
 
 				  </div><!-- end of panel body -->
 
@@ -110,7 +118,7 @@
 
 
 			<div class="col-md-4 pull-right">
-				<div id="venue-canvas" style="width: 100%; height: 19em">
+				<div id="venue-canvas" style="width: 100%; height: 20em">
 			
 
 			</div>
@@ -126,12 +134,12 @@
 				<h2>Recommended Reviews</h2>
 
 				<div class="panel panel-default">
-				  <div class="panel-body">
+				  <div class="panel-body ">
 
-					<span class=" userReviewTotalLength">{{::vm.venue.tips.groups[0].items.length}} tips and reviews</span>
+					<span class=" userReviewTotalLength userReviewBody"><b>{{::vm.venue.tips.groups[0].items.length}} tips and reviews</b></span>
 
 
-					<span class="pull-right">
+					<span class="float-right userReviewBody ">
 
 						  <span><b> Sort </b>|</span>
 						  <span><a href="" ng-click="vm.sortType = '-createdAt'">Recent |</a></span>
@@ -140,44 +148,11 @@
 					</span>
 
 				 
-				  </div>
-				</div>
+				  </div><!-- end of panel body -->
 
-				<div class="panel panel-default userReviewFilterPanel">
+				</div><!-- end of panel -->
 
-				  <div class="panel-body" ng-if="vm.venue.phrases.length">
-
-				  		<center><ul class="userReviewFilterPanelList">
-
-				  			<li >Filter by review popularity:</li>
-
-							<li  class="labels userReviewActiveLinks">
-
-								<a  href="" loading-filter loadall="''" data-loading-text="viewing all...">
-
-								all tips and reviews
-
-								</a>
-
-							</li>
-
-							<li ng-repeat="phrase in vm.venue.phrases" class="labels">
-
-								<a href=""  loading-filter loadsingle="{{phrase.phrase}}"data-loading-text="loading..."  >
-
-								{{phrase.phrase.split(" ")[0]}}
-
-								</a>
-
-							</li>
-
-				  		</ul></center>
-
-				  	
-				  </div>
-				
-				</div>
-
+			
 			
 
 				<ul class="userReviewList"> 
@@ -194,7 +169,7 @@
 
 						  <div class="media-body">
 
-						    <h5 class="media-heading" ng-bind-html="user.text | highlight:vm.phraseName">
+						    <h5 class="media-heading">
 								 {{user.text}}
 
 						    </h5>
@@ -210,7 +185,7 @@
 
 					<center>
 
-						<button ng-if="vm.toggleLoadMore" ng-disabled='vm.reviewLim === vm.venue.tips.groups[0].items.length' view-more-reviews>View More</button>
+						<button ng-disabled='vm.reviewLim === vm.venue.tips.groups[0].items.length' view-more-reviews>View More</button>
 
 					<center>
 
@@ -220,19 +195,6 @@
 
 			<div class="col-md-3">
 
-
-				<ul class="list-group businessInformation-panel">
-
-				  <li class="list-group-item"><span class="glyphicon glyphicon-time" ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}"></span> <strong>{{::vm.venue.hours.status}}</strong> </span></li>
-
-				  <li class="list-group-item"><span class="glyphicon glyphicon-cutlery"></span> <strong><a href="{{vm.venue.menu.url}}">View Menu</a></strong></li>
-
-				  <li class="list-group-item"><strong><span class="pricing">{{::vm.venue.attributes.groups[0].summary}}</span> Price Range</strong> <small>{{::vm.venue.price.message}}</small></li>
-				
-				</ul><!-- end of ul -->
-
-
-	
 
 				<div class="panel panel-default">
 

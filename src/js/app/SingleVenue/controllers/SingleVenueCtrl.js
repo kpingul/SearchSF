@@ -15,17 +15,16 @@
 			vm.venue  	 = {};
 			vm.reviewLim = 5;
 			vm.slickBP 	 = slickBreakpoints.breakpoints;
-			vm.toggleLoadMore = true;
+			vm.menu 	 = [];
 
-
-			
-
+		
 			FSDataService.getVenue(vm.venueID)
 			
 				.then(function(response) {
 
 					vm.venue = response.data.response.venue;
 					MapService.setVenueMap(vm.venue.location.lat, vm.venue.location.lng, vm.venue.name)
+
 
 				}, function(error) {
 
@@ -37,7 +36,6 @@
 
 				.then(function(response) {
 
-					console.log(response.data.response.similarVenues.items)
 				}, function(error) {
 
 					console.log(error);
@@ -45,7 +43,9 @@
 				});
 
 
-		}			
+		}		
+
+
 
 
 }());
