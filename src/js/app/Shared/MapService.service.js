@@ -14,14 +14,18 @@
 
 			var mapService = {
 
-				setMap: setMap,
+				setSearchVenueMap: setSearchVenueMap,
 
-				getMap: LoadMap
+				setVenueMap: setVenueMap,
+
+				getSearchVenueMap: loadSearchVenuesMap
+
+
 			}
 
 			var venueInformation = [];
 
-			function setMap(venue){
+			function setSearchVenueMap(venue){
 
 				venueInformation = []
 
@@ -39,7 +43,7 @@
 
 			}
 
-			function LoadMap() {
+			function loadSearchVenuesMap() {
 
 		        var mapOptions = {
 
@@ -78,6 +82,45 @@
 		           	 })(marker, data);
 		        }
 		    }
+
+
+		    function setVenueMap(lat, lng, venueName){
+		    	initialize(lat, lng, venueName)
+		    }
+
+
+		    function initialize(lat, lng, venueName) {
+	
+					var myLatlng = new google.maps.LatLng(lat,lng);
+
+			        var mapOptions = {
+
+			          center: myLatlng,
+
+			          zoom: 17
+			        };
+
+			        var map = new google.maps.Map(document.getElementById("venue-canvas"), mapOptions);
+
+
+			
+		
+
+				    var marker = new google.maps.Marker({
+				       position: myLatlng,
+				       map: map,
+
+					});
+
+					var infowindow = new google.maps.InfoWindow({
+					  content: venueName
+					  });
+
+					infowindow.open(map,marker);
+					 
+				}
+
+		
 
 
 			return mapService;

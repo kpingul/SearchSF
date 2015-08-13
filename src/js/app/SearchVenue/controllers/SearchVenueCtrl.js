@@ -6,16 +6,17 @@
 
 		.controller('SearchVenueCtrl', SearchVenueCtrl);
 
-		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService','$q'];
+		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService'];
 
-		function SearchVenueCtrl($scope, FSDataService,MapService, $q){
+		function SearchVenueCtrl($scope, FSDataService,MapService){
 			
 			var vm         = this;
-			
+
 			vm.venues      = [];
 			vm.time        = new Date().toLocaleTimeString().replace(/:\d+ /, ' ');
 			vm.venueFilter = false;
 			vm.sortType    = "";
+			vm.location    = "";
 			
 			vm.search = function(){
 
@@ -25,20 +26,19 @@
 				 *   @post vm venues is set to array of venues
 				 */
 			
-				FSDataService.getVenueLocations(vm.location)
+				 FSDataService.getVenueLocations(vm.location)
 
 					.then(function(response){
 
-						//set venues from response
-						vm.venues = response.data.response.groups[0].items;
-
+						
+						vm.venues =  response.data.response.groups[0].items;
+						
 						//Set and Get Map Data 
-						MapService.setMap(vm.venues);
-						MapService.getMap();
+						MapService.setSearchVenueMap( response.data.response.groups[0].items);
+						MapService.getSearchVenueMap();
 
 						//show Search Venue Filter
 						vm.venueFilter = true;
-
 
 					}, function(error){
 

@@ -8,7 +8,7 @@
 	
 	'use strict';
 
-	angular.module('myApp', ['ui.router','slick']);
+	angular.module('myApp', ['ui.router','slick', 'ngSanitize']);
 
 
 }());

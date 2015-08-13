@@ -18,7 +18,11 @@
     "angular-ui-router": "~0.2.15",
     "slick-carousel": "~1.5.8",
     "angular-slick": "~0.2.1",
-    "swipebox": "~1.4.1"
+    "swipebox": "~1.4.1",
+    "angular-mocks": "~1.4.3",
+    "bower": "*",
+    "install": "~1.0.4",
+    "angular-sanitize": "~1.4.3"
   },
   "resolutions": {
     "slick-carousel": "~1.4.1"

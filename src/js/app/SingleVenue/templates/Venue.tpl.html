@@ -53,10 +53,9 @@
 
 	<div class="row">
 
-		<div class="col-md-9">
+		<div class="col-md-4">
 
-			<div class="col-md-4">
-				
+						
 				<div class="panel panel-default">
 
 				  <div class="panel-body">
@@ -101,27 +100,21 @@
 
 				</div><!-- end of panel -->
 			
-				
-			</div><!-- end of column md-4 -->
+
+
 
 
 			
-		</div><!-- end of column md-9 -->
-		
-		<div class="col-md-3">
+		</div><!-- end of column md-3-->
+
+
+
+			<div class="col-md-4 pull-right">
+				<div id="venue-canvas" style="width: 100%; height: 19em">
 			
-			<ul class="list-group businessInformation-panel">
 
-			  <li class="list-group-item"><span class="glyphicon glyphicon-time" ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}"></span> <strong>{{::vm.venue.hours.status}}</strong> </span></li>
-
-			  <li class="list-group-item"><span class="glyphicon glyphicon-cutlery"></span> <strong><a href="{{vm.venue.menu.url}}">View Menu</a></strong></li>
-
-			  <li class="list-group-item"><strong><span class="pricing">{{::vm.venue.attributes.groups[0].summary}}</span> Price Range</strong> <small>{{::vm.venue.price.message}}</small></li>
-			
-			</ul><!-- end of ul -->
-
-
-		</div><!-- end of column -->
+			</div>
+		</div>
 		
 	</div><!-- end of row -->
 
@@ -132,17 +125,64 @@
 		
 				<h2>Recommended Reviews</h2>
 
-				<ol class="breadcrumb">
-				  <li>Sort</li>
-				  <li><a href="" ng-click="sortType = '-createdAt'">Newest</a></li>
-				  <li><a href="" ng-click="sortType = 'createdAt'">Oldest</a></li>
-				  <li><a href="" ng-click="sortType = '-likes.count'">Most Likes</a></li>
-				  <li><a href="" ng-click="sortType = 'likes.count'">Least Likes</a></li>
-				</ol>
+				<div class="panel panel-default">
+				  <div class="panel-body">
+
+					<span class=" userReviewTotalLength">{{::vm.venue.tips.groups[0].items.length}} tips and reviews</span>
+
+
+					<span class="pull-right">
+
+						  <span><b> Sort </b>|</span>
+						  <span><a href="" ng-click="vm.sortType = '-createdAt'">Recent |</a></span>
+						  <span><a href="" ng-click="vm.sortType = '-likes.count'">Popular</a></span>
+					
+					</span>
+
+				 
+				  </div>
+				</div>
+
+				<div class="panel panel-default userReviewFilterPanel">
+
+				  <div class="panel-body" ng-if="vm.venue.phrases.length">
+
+				  		<center><ul class="userReviewFilterPanelList">
+
+				  			<li >Filter by review popularity:</li>
+
+							<li  class="labels userReviewActiveLinks">
+
+								<a  href="" loading-filter loadall="''" data-loading-text="viewing all...">
+
+								all tips and reviews
+
+								</a>
+
+							</li>
+
+							<li ng-repeat="phrase in vm.venue.phrases" class="labels">
+
+								<a href=""  loading-filter loadsingle="{{phrase.phrase}}"data-loading-text="loading..."  >
+
+								{{phrase.phrase.split(" ")[0]}}
+
+								</a>
+
+							</li>
+
+				  		</ul></center>
+
+				  	
+				  </div>
+				
+				</div>
+
+			
 
 				<ul class="userReviewList"> 
 					
-					<li ng-repeat="user in vm.venue.tips.groups[0].items |  orderBy: sortType | limitTo: vm.reviewLim ">
+					<li ng-repeat="user in vm.venue.tips.groups[0].items | filter: vm.phraseName| orderBy: vm.sortType | limitTo: vm.reviewLim ">
 			
 						<div class="media">
 
@@ -154,7 +194,7 @@
 
 						  <div class="media-body">
 
-						    <h5 class="media-heading">
+						    <h5 class="media-heading" ng-bind-html="user.text | highlight:vm.phraseName">
 								 {{user.text}}
 
 						    </h5>
@@ -170,7 +210,7 @@
 
 					<center>
 
-						<button ng-disabled="vm.reviewLim === vm.venue.tips.groups[0].items.length" view-more-reviews>View More</button>
+						<button ng-if="vm.toggleLoadMore" ng-disabled='vm.reviewLim === vm.venue.tips.groups[0].items.length' view-more-reviews>View More</button>
 
 					<center>
 
@@ -179,6 +219,20 @@
 			</div><!-- end of column-->
 
 			<div class="col-md-3">
+
+
+				<ul class="list-group businessInformation-panel">
+
+				  <li class="list-group-item"><span class="glyphicon glyphicon-time" ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}"></span> <strong>{{::vm.venue.hours.status}}</strong> </span></li>
+
+				  <li class="list-group-item"><span class="glyphicon glyphicon-cutlery"></span> <strong><a href="{{vm.venue.menu.url}}">View Menu</a></strong></li>
+
+				  <li class="list-group-item"><strong><span class="pricing">{{::vm.venue.attributes.groups[0].summary}}</span> Price Range</strong> <small>{{::vm.venue.price.message}}</small></li>
+				
+				</ul><!-- end of ul -->
+
+
+	
 
 				<div class="panel panel-default">
 

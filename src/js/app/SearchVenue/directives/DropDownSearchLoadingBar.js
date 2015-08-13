@@ -23,20 +23,26 @@
 					
 					function activate(event){
 
-						$('li.activeLink').removeClass(activeLink);
-						$(overlay).addClass(loadingOverlay);
-						$(spinner).addClass(active);
+						if(attrs.sort){
 
-						$timeout( function(){
+							$('li.activeLink').removeClass(activeLink);
+							$(overlay).addClass(loadingOverlay);
+							$(spinner).addClass(active);
 
-							scope.vm.sortType =  attrs.sort;
-				
-							scope.$digest();
-							$(spinner).removeClass(active);
-							$(overlay).removeClass(loadingOverlay);
-							elem.parent().addClass(activeLink);
+							$timeout( function(){
 
-						}, 800);
+								scope.vm.sortType =  attrs.sort;
+					
+								scope.$digest();
+								$(spinner).removeClass(active);
+								$(overlay).removeClass(loadingOverlay);
+								elem.parent().addClass(activeLink);
+
+							}, 800);
+
+						}
+					
+					
 
 					}
 
