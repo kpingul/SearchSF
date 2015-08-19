@@ -16,41 +16,32 @@
 			vm.time        = new Date().toLocaleTimeString().replace(/:\d+ /, ' ');
 			vm.venueFilter = false;
 			vm.sortType    = "";
-			vm.location    = "";
+			vm.searchType    = "";
+		
+
 			
 			vm.search = function(){
 
-				/**
-				 * 	 @pre FSData service is called and passed desired user location
-				 * 	 
-				 *   @post vm venues is set to array of venues
-				 */
-			
-				 FSDataService.getVenueLocations(vm.location)
+				FSDataService.getVenueLocationsByType(vm.searchType)
 
-					.then(function(response){
+					.then(function(response) {
 
-						
-						vm.venues =  response.data.response.groups[0].items;
-						
+						vm.searchName = vm.searchType;
+						vm.venues = response;
+
 						//Set and Get Map Data 
-						MapService.setSearchVenueMap( response.data.response.groups[0].items);
+						MapService.setSearchVenueMap(response);
 						MapService.getSearchVenueMap();
 
 						//show Search Venue Filter
 						vm.venueFilter = true;
-
-					}, function(error){
-
-						return error;
-
+						vm.searchType = "";
+					})
+					.catch(function(error){
+						console.log(error);
 					});
-
-
-				//empty location input from user 
-				vm.location = "";
-				
-			}
+		
+			};
 
 			/**
 			 * @pre receives value and number of times to duplicate
@@ -68,7 +59,7 @@
 				}
 				//return duplicated str (x) times
 				return str;
-			}
+			};
 
 		}
 

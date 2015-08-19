@@ -21,13 +21,13 @@
 				getSearchVenueMap: loadSearchVenuesMap
 
 
-			}
+			};
 
 			var venueInformation = [];
 
 			function setSearchVenueMap(venue){
 
-				venueInformation = []
+				venueInformation = [];
 
 				venue.map( function( item, index){
 
@@ -85,7 +85,7 @@
 
 
 		    function setVenueMap(lat, lng, venueName){
-		    	initialize(lat, lng, venueName)
+		    	initialize(lat, lng, venueName);
 		    }
 
 

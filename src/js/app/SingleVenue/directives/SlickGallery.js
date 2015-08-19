@@ -21,7 +21,7 @@
 
 				link: link
 
-			}
+			};
 
 			function link(scope, elem, attrs){
 						
@@ -34,17 +34,20 @@
 					e.preventDefault();
 
 					//activate swipebox with venue photos
+					//@params accepts an array of objects
+					//with href and title properties
 					$.swipebox(photoMixins);
 
 				});
 
-				
+				//Calls the FS Data Service and requests
+				//the venue ID and creates a mixin of photo objects
+				//to be passed into the swipebox jquery plugin
 				FSDataService.getVenuePhotos(attrs.venueid)
 
 					.then( function(response) {
 
 						photos = response.data.response.photos.items;
-
 
 						return photos;
 
@@ -54,23 +57,24 @@
 
 					})
 
-					.then( function(response) {
+					.then( function(updatedResponse) {
 						
-						response.map( function(item, index) {
+						updatedResponse.map( function(item, index) {
 
+							//checks for user information since
+							//not all users include a last name or firstName
 							if(item.user.lastName){
-
 								photoMixins.push({
 									href: item.prefix + photoSize + item.suffix,
 									title: item.user.firstName + ' ' + item.user.lastName
-								})
+								});
 
 							}else{
 
 								photoMixins.push({
 									href: item.prefix + photoSize + item.suffix,
 									title: item.user.firstName
-								})
+								});
 							}
 
 						});

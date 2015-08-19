@@ -9,8 +9,16 @@
 	
 		<!-- Angular Slick Carousel Plugin -->
 
-		<slick arrows="true" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1" data="vm.venue.photos.groups[0].items" init-onload="true" responsive="vm.slickBP">
+		<slick 
 
+			arrows="true" 
+			speed="300" 
+			slides-to-show="5" 
+			touch-move="false" 
+			slides-to-scroll="1" 
+			data="vm.venue.photos.groups[0].items"
+			init-onload="true" 
+			responsive="vm.slickBP">
 
 			<div ng-repeat="photo in ::vm.venue.photos.groups[0].items">
 					
@@ -19,8 +27,11 @@
     				<img class="img-responsive" src="{{::photo.prefix}}300x300{{::photo.suffix}}" alt="">
 
 			        <div class="img-info">
+
 			            <h4><strong>{{::photo.user.firstName}} {{::photo.user.lastName}} </strong></h4>
+
 			            <p>on {{::photo.createdAt | timefilter}}</p>
+
 			        </div>
 			    </div>
 
@@ -33,7 +44,9 @@
 
 
 		<h4 class="text-center" >	
-			<a href="#" venue-photo-gallery venueId="{{vm.venueID}}">See all photos</a>
+
+			<a href="#" venue-photo-gallery venueId="{{vm.venue.id}}">See all photos</a>
+
 		</h4>
 
 
@@ -52,16 +65,13 @@
 					<span class="addressName">	
 						<h1>{{::vm.venue.name}}</h1>
 
-					
-											<p>{{::vm.venue.categories[0].name}} &middot; {{::vm.venue.categories[1].name}}</p>
+						<p>{{::vm.venue.categories[0].name}} &middot; {{::vm.venue.categories[1].name}}</p>
 					</span>
 
 
 					<address class="businessInformationContainer">
 						
-
-
-							<strong><span class="businessRating">{{::vm.venue.rating}}</span> Based on {{::vm.venue.ratingSignals}} ratings </strong>
+						<strong><span class="businessRating">{{::vm.venue.rating}}</span> Based on {{::vm.venue.ratingSignals}} ratings </strong>
 
 						</p>
 
@@ -80,8 +90,6 @@
 		
 
 					<address class="businessMenu">
-
-				
 
 						<span><b>Hours</b>: <strong ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}">{{::vm.venue.hours.status}}</strong> </span>
 
@@ -108,19 +116,12 @@
 
 				</div><!-- end of panel -->
 			
-
-
-
-
 			
 		</div><!-- end of column md-3-->
 
 
-
 			<div class="col-md-4 pull-right">
 				<div id="venue-canvas" style="width: 100%; height: 20em">
-			
-
 			</div>
 		</div>
 		

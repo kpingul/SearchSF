@@ -41,6 +41,18 @@
 							}, 800);
 
 						}
+
+
+							$(overlay).addClass(loadingOverlay);
+							$(spinner).addClass(active);
+
+							$timeout( function(){
+
+								$(spinner).removeClass(active);
+								$(overlay).removeClass(loadingOverlay);
+
+							}, 800);
+
 					
 					
 
@@ -48,7 +60,7 @@
 
 
 				}
-			}
+			};
 
 		}]);
 }());

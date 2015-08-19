@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 
 body
 {
@@ -377,7 +380,11 @@ a
     float: right;
 }
 
-/* Media Break Point 1 */
+
+/* ************************************************* */
+/*            Media Breakpoint #1  @996px            */
+/* ************************************************* */
+
 
 @media (max-width: 996px) {
     .pull-right{
@@ -385,6 +392,11 @@ a
     }
 
 }
+
+/* ************************************************* */
+/*            Media Breakpoint #2  @633px            */
+/* ************************************************* */
+
 @media (max-width: 633px) {
     
     .businessInformationContainer{
@@ -398,6 +410,11 @@ a
     }
 
 }
+
+/* ************************************************* */
+/*            Media Breakpoint #3  @500px            */
+/* ************************************************* */
+
 @media (max-width: 500px) {
     .searchVenueBody{
         display: block;

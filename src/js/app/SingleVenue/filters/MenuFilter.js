@@ -10,7 +10,7 @@
 
 			return function(value){
 	
-				var menu = []
+				var menu = [];
 	
 				if(value){
 	

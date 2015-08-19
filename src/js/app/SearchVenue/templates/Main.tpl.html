@@ -2,7 +2,7 @@
         <span id="first" class="ball"></span>
         <span id="second" class="ball"></span>
         <span id="third" class="ball"></span>
-    </div>
+</div>
 
 <div class="container-fluid overlay">
 
@@ -14,9 +14,14 @@
 
 				<form ng-submit="vm.search()">	
 
-					<input type="text" ng-model="vm.location" placeholder="Have a craving here in San Francisco? Type it here..." required>
+					<input 
 
-					<button class="btn btn-default btn-sm" type="submit">Search</button>
+						type="text" 
+						ng-model="vm.searchType" 
+						placeholder="Have a craving here in San Francisco? Type it here..." 
+						required>
+
+					<button class="btn btn-default btn-sm" type="submit"  loading-bar >Search</button>
 
 				</form>
 
@@ -25,15 +30,30 @@
 
 			
 			<div class="SearchVenueFilterContainer">
-				
-
 
 				<h4 ng-if="vm.venueFilter">	
-					<button class="btn btn-default btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" drop-down>Show Filters</button>
+
+					<p><small>Search Results for <strong>{{vm.searchName | uppercase}}</strong> near<strong> San Francisco, CA</strong></small></p>
+
+					<button 
+
+						class="btn btn-default btn-md" 
+						type="button" 
+						data-toggle="collapse" 
+						data-target="#collapseExample" 
+						aria-expanded="false" 
+						aria-controls="collapseExample" 
+						drop-down>
+
+						Show Filters
+
+					</button>
+
 				</h4>
 
 	
 				<div class="collapse" id="collapseExample">
+
 
 				  <div class="well clearfix">
 				    
@@ -86,8 +106,6 @@
 			</div> <!-- SearchVenueFilterContainer -->
 					
 
-
-
 			<ul class="searchVenueList">
 
 
@@ -99,7 +117,11 @@
 
 						  	 <a ui-sref="venue({venueID: venue.venue.id})">
 
-						   	  	 <img class="media-object SearchVenuePhoto" src="{{venue.venue.photos.groups[0].items[0].prefix}}300x300{{venue.venue.photos.groups[0].items[0].suffix}}" alt="...">
+						   	  	 <img 
+
+						   	  	 	class="media-object SearchVenuePhoto" 
+						   	  	 	src="{{venue.venue.photos.groups[0].items[0].prefix}}300x300{{venue.venue.photos.groups[0].items[0].suffix}}" 
+						   	  	 	alt="...">
 
 							  </a>
 						   	
@@ -139,7 +161,11 @@
 						
 						<div class="media" style="line-height: 1em">
 							
-						  	<img class="SearchVenueUserPhoto" src="{{venue.tips[0].user.photo.prefix}}300x300{{venue.tips[0].user.photo.suffix}}" alt="">
+						  	<img 
+
+						  		class="SearchVenueUserPhoto" 
+						  		src="{{venue.tips[0].user.photo.prefix}}300x300{{venue.tips[0].user.photo.suffix}}" 
+						  		alt="">
 
 					
 							<span  class="searhVenueUserTip">{{venue.tips[0].text}}</span>

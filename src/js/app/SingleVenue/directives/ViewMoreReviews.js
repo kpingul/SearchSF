@@ -16,7 +16,7 @@
 
 				link: link
 
-			}
+			};
 
 			function link(scope, elem, attrs){
 
@@ -25,14 +25,14 @@
 
 				elem.on('click', function(event){
 
-
-					$timeout( function(){
+					var timer = $timeout( function(){
 					 	
 			  			scope.vm.reviewLim += addedLimit;
 
 			  		}, numOfMs);
 
 				});
+
 			}
 
 			return directive;

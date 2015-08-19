@@ -6,41 +6,18 @@
 
 		.controller('SingleVenueCtrl', SingleVenueCtrl);
 
-		SingleVenueCtrl.$inject = ['$scope','FSDataService','MapService', '$stateParams','$timeout','slickBreakpoints'];
+		SingleVenueCtrl.$inject = ['$scope','MapService','slickBreakpoints', 'SingleVenueData'];
 
-		function SingleVenueCtrl($scope,FSDataService,MapService, $stateParams, $timeout, slickBreakpoints){
+		function SingleVenueCtrl($scope,MapService, slickBreakpoints, SingleVenueData){
 
 			var vm 		 = this;
-			vm.venueID 	 = $stateParams.venueID;
-			vm.venue  	 = {};
+			vm.venue  	 = SingleVenueData;
 			vm.reviewLim = 5;
 			vm.slickBP 	 = slickBreakpoints.breakpoints;
-			vm.menu 	 = [];
 
-		
-			FSDataService.getVenue(vm.venueID)
-			
-				.then(function(response) {
-
-					vm.venue = response.data.response.venue;
-					MapService.setVenueMap(vm.venue.location.lat, vm.venue.location.lng, vm.venue.name)
+			MapService.setVenueMap(SingleVenueData.location.lat, SingleVenueData.location.lng, SingleVenueData.name);
 
 
-				}, function(error) {
-
-					console.log(error);
-
-				});
-
-			FSDataService.getSimilarVenues(vm.venueID)
-
-				.then(function(response) {
-
-				}, function(error) {
-
-					console.log(error);
-
-				});
 
 
 		}		

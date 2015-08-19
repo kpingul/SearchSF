@@ -37,7 +37,7 @@
 						    }
 
 						  ]//end of breakpoints
-		})
+		});
 
 
 }());
