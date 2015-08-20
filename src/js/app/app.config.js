@@ -25,7 +25,7 @@
 						SingleVenueData: ['$stateParams', 'FSDataService', function($stateParams, FSDataService) {
 							var venue   = {},
 								venueID = $stateParams.venueID; 
-
+								
 							return FSDataService
 									.getVenue(venueID)
 										.then(function(response) {
@@ -35,6 +35,21 @@
 										.catch(function(error){
 											console.log(error);
 										});
+
+						}],
+
+						SimilarVenueData: ['$stateParams', 'FSDataService',function($stateParams, FSDataService) {
+							var venueID = $stateParams.venueID;
+							
+							return FSDataService
+							 .getSimilarVenues(venueID)
+							 	.then(function(response) {
+									return response.data.response.similarVenues.items;
+
+							 	})
+							 	.catch(function(error){
+							 		return error;
+							 	});
 
 						}]
 					}
