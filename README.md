@@ -113,7 +113,7 @@ Here are the dependencies that I'm using to make those features come alive:
 <pre>
 angular.module('myApp', [
 	'ui.router', 
-  'slick'
+	 'slick'
 ]);
 
 </pre>
