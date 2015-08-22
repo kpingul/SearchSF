@@ -38,8 +38,6 @@
 
 	  		</div>
 	  
-
-		
 		</slick><!-- end of slick carousel -->
 
 
@@ -91,7 +89,22 @@
 
 					<address class="businessMenu">
 
-						<span><b>Hours</b>: <strong ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}">{{::vm.venue.hours.status}}</strong> </span>
+						<span><b>Hours</b>: <strong ng-class="{closedVenue : vm.venue.hours.isOpen == false, openVenue : vm.venue.hours.isOpen == true}">{{::vm.venue.hours.status}}</strong>
+							
+							<a 
+								href="" 
+								data-container="body" 
+								data-toggle="popover" 
+								data-placement="top" 
+								id="popoverBusinessHours" 
+								data="vm.venue.hours.timeframes" 
+								business-hours-toolbar>
+
+							 (View hours)
+
+							</a>
+
+						 </span>
 
 						<span><b>Price: </b> <strong class="pricing">{{::vm.venue.attributes.groups[0].summary}}</strong> {{::vm.venue.price.message}}</span>
 
@@ -196,31 +209,6 @@
 
 			<div class="col-md-3">
 
-
-				<div class="panel panel-default">
-
-					 <div class="panel-heading"><strong class="businessHoursTitle">Business Hours</strong></div>
-
-					  <div class="panel-body">
-				   		
-				   		<ul class="businessHoursList">
-
-				   			<li ng-repeat="time in ::vm.venue.hours.timeframes">
-
-				   				<p><strong>{{::time.days}}</strong> <span class="businessHourHours">{{::time.open[0].renderedTime}}</span><br>
-
-				   				<span ng-if="time.open[1].renderedTime" class="businessHourHours" >{{::time.open[1].renderedTime}}</span></p>
-
-				   			</li>
-
-
-				   		</ul><!-- end of business hours list -->
-
-				  </div><!-- end of panel body -->
-
-				</div><!-- end of panel -->
-
-
 				<div class="panel panel-default">
 
 					 <div class="panel-heading"><strong class="businessHoursTitle">More Business Info</strong></div>
@@ -241,6 +229,34 @@
 				  </div><!-- end of panel body -->
 
 				</div><!-- end of panel -->
+
+				<h5><strong>You May Also Like</strong></h5>
+
+				<div  
+
+					class="similarVenueContainer" 
+					ng-repeat="(index, similarVenue) in vm.similarVenues track by $index"
+					ng-click="vm.viewSimilarVenue(vm.similarVenues[index].id)">
+					
+					<address style="line-height: 1.1">
+						
+
+						<a class="similarVenueContainerLink" href="{{similarVenue.url}}">
+						
+						   	<img class="pull-left" src="{{similarVenue.categories[0].icon.prefix}}bg_64{{similarVenue.categories[0].icon.suffix}}"/>
+			
+							    <h5 >
+									<a href="">{{similarVenue.name}}
+									</a>
+							    </h5>
+								<p>{{similarVenue.categories[0].shortName}}</p>
+						    	 <small>{{similarVenue.location.address}} ({{similarVenue.location.crossStreet}})</small>
+			
+														
+						</a>
+						
+					</address>
+				</div>
 
 			</div><!-- end of col md 3 -->
 
