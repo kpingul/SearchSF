@@ -5,7 +5,6 @@
 body
 {
     font-family: 'Raleway', sans-serif;
-       
 }
 h2
 {
@@ -62,7 +61,7 @@ h2
 }
 
 .searchVenueList li:hover{
-    background: #CBCDDD;
+    background: #ECF0FF;
 }
 .SearchVenuePhoto
 {
@@ -381,16 +380,6 @@ a
     float: right;
 }
 
-.similarVenueContainer{
-    cursor: pointer;
-}
-
-.similarVenueContainer:hover{
-    background: #E2E2E2;
-}
-.similarVenueContainer p {
-    font-size: .9em;
-}
 
 /* ************************************************* */
 /*            Media Breakpoint #1  @996px            */
