@@ -65,11 +65,8 @@ Since the client application is built using AngularJS and other 3rd party librar
   "gulp-minify-css": "^1.2.0",
   "gulp-rename": "^1.2.2",
   "gulp-uglify": "^1.2.0",
-  "jasmine-core": "^2.3.4",
-  "jshint-stylish": "^2.0.1",
-  "karma": "^0.13.8",
-  "karma-chrome-launcher": "^0.2.0",
-  "karma-jasmine": "^0.3.6"
+  "jshint-stylish": "^2.0.1"
+
 </pre>
 
 * To install our npm dependencies for our build system and server, run: 
