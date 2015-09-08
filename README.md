@@ -2,11 +2,12 @@
 
 ***
 
+####The sample demo can be found <a href="http://kirckpingul.com/SearchSF"><b>here</b></a>
+
+
 ##Purpose
 
 Search SF is a <b>clone of the FourSquare application</b> I created in AngularJs. It is still a prototype that uses the FourSquare API to search for Food venues in San Francisco . It is inspired by the actual FourSquare Application and am going to put some cool features in the future.The application tries to show best practices when it comes to: <b>folders structure</b>, <b>using modules</b>, <b>organizing navigation</b>, and building <b>a simple interface</b>.
-
-The sample demo can be found <a href="http://kirckpingul.com/SearchSF"><b>here</b></a>
 
 ##Stack
 
