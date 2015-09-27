@@ -17,7 +17,7 @@
                 <div class="input-group">
                   <input type="text" id="input" class="form-control"  placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery">
                   <span class="input-group-btn">
-                    <button class="btn btn-default"  ui-sref="main({type: vm.searchQuery})" id="search" type="submit">SEARCH</button>
+                    <button class="btn btn-default" ng-disabled="!vm.searchQuery"  ui-sref="main({type: vm.searchQuery})" id="search" type="submit">SEARCH</button>
                   </span>
                 </div><!-- /input-group -->
     
