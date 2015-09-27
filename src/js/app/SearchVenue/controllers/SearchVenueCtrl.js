@@ -6,9 +6,9 @@
 
 		.controller('SearchVenueCtrl', SearchVenueCtrl);
 
-		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService'];
+		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService', '$stateParams'];
 
-		function SearchVenueCtrl($scope, FSDataService,MapService){
+		function SearchVenueCtrl($scope, FSDataService,MapService, $stateParams){
 			
 			var vm         = this;
 
@@ -17,31 +17,25 @@
 			vm.venueFilter = false;
 			vm.sortType    = "";
 			vm.searchType    = "";
+			FSDataService.getVenueLocationsByType($stateParams.type)
+
+				.then(function(response) {
+
+					vm.searchName = vm.searchType;
+					vm.venues = response;
+
+					//Set and Get Map Data 
+					MapService.setSearchVenueMap(response);
+					MapService.getSearchVenueMap();
+
+					//show Search Venue Filter
+					vm.venueFilter = true;
+					vm.searchType = "";
+				})
+				.catch(function(error){
+					console.log(error);
+				});
 		
-
-			
-			vm.search = function(){
-
-				FSDataService.getVenueLocationsByType(vm.searchType)
-
-					.then(function(response) {
-
-						vm.searchName = vm.searchType;
-						vm.venues = response;
-
-						//Set and Get Map Data 
-						MapService.setSearchVenueMap(response);
-						MapService.getSearchVenueMap();
-
-						//show Search Venue Filter
-						vm.venueFilter = true;
-						vm.searchType = "";
-					})
-					.catch(function(error){
-						console.log(error);
-					});
-		
-			};
 
 			/**
 			 * @pre receives value and number of times to duplicate
