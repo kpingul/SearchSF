@@ -2,11 +2,12 @@
 
 ***
 
+####The sample demo can be found <a href="http://kirckpingul.com/SearchSF"><b>here</b></a>
+
+
 ##Purpose
 
 Search SF is a <b>clone of the FourSquare application</b> I created in AngularJs. It is still a prototype that uses the FourSquare API to search for Food venues in San Francisco . It is inspired by the actual FourSquare Application and am going to put some cool features in the future.The application tries to show best practices when it comes to: <b>folders structure</b>, <b>using modules</b>, <b>organizing navigation</b>, and building <b>a simple interface</b>.
-
-The sample demo can be found <a href="http://kirckpingul.com/SearchSF"><b>here</b></a>
 
 ##Stack
 
@@ -65,11 +66,8 @@ Since the client application is built using AngularJS and other 3rd party librar
   "gulp-minify-css": "^1.2.0",
   "gulp-rename": "^1.2.2",
   "gulp-uglify": "^1.2.0",
-  "jasmine-core": "^2.3.4",
-  "jshint-stylish": "^2.0.1",
-  "karma": "^0.13.8",
-  "karma-chrome-launcher": "^0.2.0",
-  "karma-jasmine": "^0.3.6"
+  "jshint-stylish": "^2.0.1"
+
 </pre>
 
 * To install our npm dependencies for our build system and server, run: 
