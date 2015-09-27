@@ -9,15 +9,21 @@
 			$urlRouterProvider.when('', '/');
 
 			$stateProvider
-				.state('main', {
+				.state('home', {
 					url: '/',
+					templateUrl: 'src/js/app/Home/home.tpl.html',
+					controller: 'HomeCtrl',
+					controllerAs: 'vm'
+				})
+				.state('main', {
+					url: '/search/:type',
 					templateUrl: 'src/js/app/SearchVenue/templates/Main.tpl.html',
 					controller: 'SearchVenueCtrl',
 					controllerAs: 'vm'
 
 				})
 				.state('venue', {
-					url: '/:venueID',
+					url: '/venue/:venueID',
 					templateUrl: 'src/js/app/SingleVenue/templates/Venue.tpl.html',
 					controller: 'SingleVenueCtrl',
 					controllerAs: 'vm',

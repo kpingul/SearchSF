@@ -9,7 +9,6 @@
 		SingleVenueCtrl.$inject = ['$scope','MapService','slickBreakpoints', 'SingleVenueData', 'SimilarVenueData', '$state'];
 
 		function SingleVenueCtrl($scope,MapService, slickBreakpoints, SingleVenueData, SimilarVenueData, $state){
-
 			var vm 		 	 = this;
 			vm.venue  	 	 = SingleVenueData;
 			vm.reviewLim 	 = 5;
