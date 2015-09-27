@@ -12,14 +12,17 @@
         
             
             <form ng-submit="vm.searchRequest(vm.searchQuery)" class="middle-form">  
-              <input type="text"  id="input" class="form-control"  placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery">
-
-              <button ui-sref="main({type: vm.searchQuery})" type="submit" id="search"><strong>SEARCH</strong></button>
+           
+             
+                <div class="input-group">
+                  <input type="text" id="input" class="form-control"  placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default"  ui-sref="main({type: vm.searchQuery})" id="search" type="submit">SEARCH</button>
+                  </span>
+                </div><!-- /input-group -->
+    
             </form>
             
           </center>
-
-  
-
         </div>
     </div>
