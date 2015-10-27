@@ -584,6 +584,13 @@ a
         float: initial;
           
     }
+    .search_description h2, 
+    .search_description h4{
+        font-size: 1.5em;
+    }
+    .search_description h4{
+        font-size: 1em;
+    }
 }
 
 

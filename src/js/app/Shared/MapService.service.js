@@ -99,7 +99,9 @@
 
 			          zoom: 17,
 
-			          scrollwheel: false
+			          scrollwheel: false,
+
+			          draggable: false
 			        };
 
 			        var map = new google.maps.Map(document.getElementById("venue-canvas"), mapOptions);
