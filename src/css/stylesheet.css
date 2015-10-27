@@ -60,15 +60,9 @@ h2
   z-index: -1;
   height: 80%;
 
-  background: url("../images/sf.jpg") no-repeat ;
+  background: url("../images/food.jpg") no-repeat ;
   background-size: 100% 100%;
 
-
-   -webkit-filter: blur(5px) opacity(0.9) brightness(0.7);
-  -moz-filter: blur(5px) opacity(0.9) brightness(0.7);
-  -o-filter: blur(5px) opacity(0.9) brightness(0.7);
-  -ms-filter: blur(5px) opacity(0.9) brightness(0.7);
-filter: blur(5px) opacity(0.9) brightness(0.7);
 }
 
 .middle{
@@ -92,7 +86,7 @@ filter: blur(5px) opacity(0.9) brightness(0.7);
 }
 .middle-title-2{
     font-weight: bold;
-    font-size: 2.5em;  text-align: center;
+    font-size: 2.1em;  text-align: center;
 }
 .middle-title-3{
     margin-top: 30px;
