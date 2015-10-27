@@ -1,7 +1,6 @@
 /* Gulp Configurations */
 
 var gulp      	  = require('gulp'),
-	express       = require('express'),
 	concat        = require('gulp-concat'),
 	rename        = require('gulp-rename'),
 	uglify        = require('gulp-uglify'),
@@ -13,9 +12,7 @@ var gulp      	  = require('gulp'),
 	plumber       = require('gulp-plumber'),
 	minifyHtml    = require('gulp-minify-html'),
 	templateCache = require('gulp-angular-templatecache'),
-	sourcemaps 	  = require('gulp-sourcemaps'),
-	app           = express(),
-	port          = 3000;
+	sourcemaps 	  = require('gulp-sourcemaps');
 
 
 
@@ -96,17 +93,17 @@ gulp.task('WatchStyles', function() {
 /* ***************** */
 
 
-gulp.task('express', function() {
+// gulp.task('express', function() {
 
-	app
-	 .use(express.static(__dirname + '/'));
+// 	app
+// 	 .use(express.static(__dirname + '/'));
 
-	app
-	 .listen(port, function() {
-		console.log("Listening on port " + port);
-	 });
+// 	app
+// 	 .listen(port, function() {
+// 		console.log("Listening on port " + port);
+// 	 });
 
-});
+// });
 
 /* ***************** */
 
@@ -145,4 +142,4 @@ gulp.task('templatecache', function() {
 /* Gulp Task Start Configurations */
 
 //Run express server, update scripts, update styles
-gulp.task('default', ['express', 'lint', 'WatchScripts', 'WatchStyles']);
+gulp.task('default', ['lint', 'WatchScripts', 'WatchStyles']);
