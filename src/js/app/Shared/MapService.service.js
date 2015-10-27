@@ -97,14 +97,13 @@
 
 			          center: myLatlng,
 
-			          zoom: 17
+			          zoom: 17,
+
+			          scrollwheel: false
 			        };
 
 			        var map = new google.maps.Map(document.getElementById("venue-canvas"), mapOptions);
 
-
-			
-		
 
 				    var marker = new google.maps.Marker({
 				       position: myLatlng,

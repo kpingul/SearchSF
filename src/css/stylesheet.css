@@ -45,6 +45,12 @@ h2
 {
     color: #fff;
 }
+.footer {
+    color: #fff;
+    padding: 22px 40px;
+    background-color: #333;
+
+}
 
 /* ************************************************* */
 /*                    Search Venue Section           */
@@ -52,7 +58,7 @@ h2
 .Main_Search #home-header {
 
   z-index: -1;
-  height: 100%;
+  height: 80%;
 
   background: url("../images/sf.jpg") no-repeat ;
   background-size: 100% 100%;
@@ -108,14 +114,34 @@ filter: blur(5px) opacity(0.9) brightness(0.7);
   opacity: 0.9;
 }
 
-  #overons{
+#overons{
     padding-left: 5%;
     padding-right: 5%;
     min-height: 640px;
     padding: 53px;
 
-  }
+}
+.search_description {
+    text-align: center;
+    padding-top: 40px;
+    letter-spacing: 0.1em;
+}
+.search_description h2, 
+.search_description h4{
+    font-weight: bold;
+}
+.search_description h4{
+    color: #6E6E6E;
+    margin-top: 10px;
+}
+.fa-stack{
+    color: #4eaacf;
+}
 
+.search_description_options{
+     text-align: center;
+       padding-bottom: 40px;
+}
 .searchVenueContainer{
     padding: 0;
     height: 92%;
@@ -131,10 +157,10 @@ filter: blur(5px) opacity(0.9) brightness(0.7);
 {
     padding: 10px 15px;
     cursor: pointer;
-    border-bottom: 2px solid #ECA729;
+    border-bottom: 2px solid #1180C9;
 }
 .searchVenueList li:first-child{
-        border-top: 2px solid #ECA729;
+        border-top: 2px solid #1180C9;
 
 }
 .SearchVenueFilterContainer{
