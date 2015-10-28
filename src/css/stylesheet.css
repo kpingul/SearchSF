@@ -38,8 +38,8 @@ h2
 }
 .spinner {
    position: absolute;
-   left: 50%;
-   top: 50%;
+   left: 45%;
+   top: 45%;
    height:80px;
    width:80px;
    margin:0px auto;
@@ -621,6 +621,11 @@ a
     }
     .search_description h4{
         font-size: 1em;
+    }
+    .spinner {
+        position: absolute;
+        left: 40%;
+        top: 40%;
     }
 }
 
