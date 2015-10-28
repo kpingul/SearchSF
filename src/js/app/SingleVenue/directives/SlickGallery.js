@@ -46,8 +46,7 @@
 				FSDataService.getVenuePhotos(attrs.venueid)
 
 					.then( function(response) {
-
-						photos = response.data.response.photos.items;
+						photos = response.data.response.photos.groups[1].items;
 
 						return photos;
 
@@ -58,7 +57,6 @@
 					})
 
 					.then( function(updatedResponse) {
-						
 						updatedResponse.map( function(item, index) {
 
 							//checks for user information since

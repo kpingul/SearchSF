@@ -6,9 +6,9 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope'];
+		HomeCtrl.$inject = ['$scope', '$http'];
 
-		function HomeCtrl($scope){
+		function HomeCtrl($scope, $http){
 			
 			var vm = this;
 

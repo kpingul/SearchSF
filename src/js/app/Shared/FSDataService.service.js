@@ -22,9 +22,9 @@
 
 			};
 
-			function getVenueLocationsByType(location){
+			function getVenueLocationsByType(query){
 
-				return $http.get('https://api.foursquare.com/v2/venues/explore?near=San-Francisco&query=' + location + '&venuePhotos=1&limit=10&radius=10000&client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806')
+				return $http.get('/api/venues/' + query)
 								.then(function(response){
 									return response.data.response.groups[0].items;
 								})
@@ -36,18 +36,18 @@
 
 			function getVenue(venueId){
 
-				return $http.get('https://api.foursquare.com/v2/venues/' + venueId + '/?client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806');
+				return $http.get('/api/venue/' + venueId);
 
 			}
 
 			function getVenuePhotos(venueId){
 
-				return $http.get('https://api.foursquare.com/v2/venues/' + venueId + '/photos?client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806');
+				return $http.get('/api/venue/photos/' + venueId);
 			}
 
 			function getSimilarVenues(venueId){
 
-				return $http.get('https://api.foursquare.com/v2/venues/' + venueId + '/similar?client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806');
+				return $http.get('/api/venue/similar/' + venueId);
 
 			}
 
