@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/'));
 app.get('/api/venues/:type', function( req, res ) {
 	var type = req.params.type;
 
-	foursquare.venues.explore({near: "San Francisco", query: type, section: "food", radius: "10000", venuePhotos: "1"}, function(err, response) {
+	foursquare.venues.explore({near: "San Francisco", query: type, radius: "10000", venuePhotos: "1"}, function(err, response) {
 		if(err) {
 			res.status(500).send({error: "error with API"});
 		}

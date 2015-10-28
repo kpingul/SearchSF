@@ -15,17 +15,23 @@
 
 			vm.searchRequest = function(query) {
 				vm.validResponse = false;
+				console.log(query);
 				FSDataService
 					.getVenueLocationsByType(query)
 					.then(function( response ) {
-						console.log(response);
+	
 						if( response.length > 0 ) {
-							vm.validResponse = true;
-							$state.transitionTo('main', {type: query});
+							$timeout(function() {
+								vm.validResponse = true;
+								$state.transitionTo('main', {type: query});
+
+							}, 1200);
 						} else {
 							//throw error message
-							vm.validResponse = true;
-							console.log('error');	
+							$timeout(function() {
+								vm.validResponse = true;
+								console.log('error');	
+							}, 1200);
 						}
 					});
 				
