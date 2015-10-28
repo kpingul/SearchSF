@@ -24,6 +24,55 @@ h2
     font-size: 11px;
 }
 
+
+
+/* ************************************************* */
+/*                    Overlay  Spinner               */
+/* ************************************************* */
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999999999999999;
+}
+.spinner {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   height:80px;
+   width:80px;
+   margin:0px auto;
+   -webkit-animation: rotation .6s infinite linear;
+   -moz-animation: rotation .6s infinite linear;
+   -o-animation: rotation .6s infinite linear;
+   animation: rotation .6s infinite linear;
+   border-left:6px solid rgba(0,174,239,.15);
+   border-right:6px solid rgba(0,174,239,.15);
+   border-bottom:6px solid rgba(0,174,239,.15);
+   border-top:6px solid rgba(0,174,239,.8);
+   border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+}
+
+
+
 /* ************************************************* */
 /*                    Navigaition Section            */
 /* ************************************************* */
@@ -355,8 +404,7 @@ a
 }
 .closedVenue
 {
-        font-size: 1.1em;
-
+    font-size: 1.1em;
     color: #cd0000;
 }
 .openVenue
@@ -375,7 +423,7 @@ a
 .businessMenu{
     float: right;
     margin-top: 3%;
-        padding: 10px;
+    padding: 10px;
 }
 .businessHoursTitle
 {
@@ -420,11 +468,9 @@ a
    
 }
 
-
 .businessInformationList
 {
     padding: 0;
-
     list-style-type: none;
 }
 .businessInformationList li
@@ -433,7 +479,6 @@ a
 }
 .businessMenu span{
     display: block;
-
     font-size: 1em;
 }
 
@@ -441,7 +486,6 @@ a
 .img-wrap
 {
     position: relative;
-
     overflow: hidden;
 }
 .img-info
@@ -449,30 +493,24 @@ a
     position: absolute;
     z-index: 1000;
     bottom: 0;
-
     width: 100%;
-
     opacity: 0;
     color: #fff;
     background-color: #000;
-
     filter: alpha(opacity = 0);
 }
 .img-info h4,
 .img-info p
 {
     font-size: .9em;
-
     padding: 0 10px;
 }
 .img-wrap:hover .img-info
 {
     -webkit-transition: opacity .25s;
-       -moz-transition: opacity .25s;
-            transition: opacity .25s;
-
+    -moz-transition: opacity .25s;
+    transition: opacity .25s;
     opacity: .75;
-
     filter: alpha(opacity = 75);
 }
 
@@ -508,10 +546,10 @@ a
         display: none;
     }
     .searchVenueContainer{
-    padding: 0;
-    height: 100%;
-    overflow-y: initial;
-}
+        padding: 0;
+        height: 100%;
+        overflow-y: initial;
+    }
 
 }
 /* ************************************************* */
@@ -530,18 +568,17 @@ a
             text-align: center;
     }
     .middle-title-1{
-    font-size: 2em; ;
-}
-.middle-title-2{
-    font-size: 1.3em; 
-}
-.middle-title-3{
-    font-size: 0.8em; 
-
-}
-.middle-form{
-    width: 100%;
-}
+        font-size: 2em; ;
+    }
+    .middle-title-2{
+        font-size: 1.3em; 
+    }
+    .middle-title-3{
+        font-size: 0.8em; 
+    }
+    .middle-form{
+        width: 100%;
+    }
 }
 
 /* ************************************************* */

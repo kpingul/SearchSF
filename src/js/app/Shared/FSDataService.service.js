@@ -26,18 +26,11 @@
 
 				return $http.get('/api/venues/' + query)
 								.then(function(response){
-									var venues = response.data.response.groups[0].items;
-									var venueMixin = [];
 									if(response) {
 
-										venues.map(function ( venue, id ) {
-									
-											if( venue.venue.menu ) {
-												venueMixin.push(venue);
-											}
-										})
-					
-										return venueMixin;
+										var venues = response.data.response.groups[0].items;
+										var venueMixin = [];
+										return venues;
 									}
 								})
 								.catch(function(error){

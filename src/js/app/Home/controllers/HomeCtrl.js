@@ -15,6 +15,8 @@
 
 			vm.searchRequest = function(query) {
 				vm.validResponse = false;
+				vm.errorResponse = false;
+
 				console.log(query);
 				FSDataService
 					.getVenueLocationsByType(query)
@@ -29,6 +31,7 @@
 						} else {
 							//throw error message
 							$timeout(function() {
+								vm.errorResponse = true;
 								vm.validResponse = true;
 								console.log('error');	
 							}, 1200);

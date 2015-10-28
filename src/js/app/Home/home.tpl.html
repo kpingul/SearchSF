@@ -22,6 +22,13 @@
                    <!-- ui-sref="main({type: vm.searchQuery})" --> 
                   </span>
                 </div><!-- /input-group -->
+                <div class="alert alert-info" role="alert" ng-if="vm.errorResponse" style=" margin-top: 13px; color: #123D52">
+
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                  <strong>Cannot find any results with <em>{{::vm.searchQuery}}</em> , please enter another search term.</strong>
+
+                </div>
 
     
 
