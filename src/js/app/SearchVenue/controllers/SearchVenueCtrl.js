@@ -17,6 +17,7 @@
 			vm.venueFilter = false;
 			vm.sortType    = "";
 			vm.searchType    = "";
+			
 			FSDataService.getVenueLocationsByType($stateParams.type)
 
 				.then(function(response) {

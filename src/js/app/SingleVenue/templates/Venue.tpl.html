@@ -36,7 +36,7 @@
 					
 	  			 <div class="img-wrap" >
 
-    				<img class="img-responsive" src="{{::photo.prefix}}300x300{{::photo.suffix}}" alt="">
+    				<img class="img-responsive" ng-src="{{::photo.prefix}}300x300{{::photo.suffix}}" alt="">
 
 			        <div class="img-info">
 
@@ -189,7 +189,7 @@
 
 						  <div class="media-left">
 
-						      <img class="media-object userReviewThumbnails" src="{{user.user.photo.prefix}}300x300{{user.user.photo.suffix}}" >
+						      <img class="media-object userReviewThumbnails" ng-src="{{user.user.photo.prefix}}300x300{{user.user.photo.suffix}}" >
 
 						  </div>
 
@@ -255,7 +255,7 @@
 
 						<a class="similarVenueContainerLink" href="{{similarVenue.url}}">
 						
-						   	<img class="pull-left" src="{{similarVenue.categories[0].icon.prefix}}bg_64{{similarVenue.categories[0].icon.suffix}}"/>
+						   	<img class="pull-left" ng-src="{{similarVenue.categories[0].icon.prefix}}bg_64{{similarVenue.categories[0].icon.suffix}}"/>
 			
 							    <h5 >
 									<a href="">{{similarVenue.name}}

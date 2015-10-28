@@ -6,14 +6,19 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$http'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state'];
 
-		function HomeCtrl($scope, $http){
+		function HomeCtrl($scope, $timeout, $state){
 			
 			var vm = this;
+			vm.validResponse = false;
 
 			vm.searchRequest = function(query) {
-				console.log(query);
+				vm.validResponse = true;
+				$timeout(function() {
+					vm.validResponse = false;
+					$state.transitionTo('main', {type: query});
+				}, 2000);
 
 			}
 

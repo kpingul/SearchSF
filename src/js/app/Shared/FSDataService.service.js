@@ -26,10 +26,15 @@
 
 				return $http.get('/api/venues/' + query)
 								.then(function(response){
-									return response.data.response.groups[0].items;
+									if(response) {
+										return response.data.response.groups[0].items;
+									}
 								})
 								.catch(function(error){
-									return error;
+									if(error) {
+										return error;
+										
+									}
 								});
 
 			}
