@@ -15,7 +15,7 @@
 				  //quick fix when the broswer initially reloads, it gets
 				  //automatically positioned at the top
 					$("html, body").animate({ scrollTop: 0 }, 0);
-			   console.log('state sucess')
+		
 			});
 
 		

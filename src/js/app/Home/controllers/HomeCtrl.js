@@ -17,7 +17,6 @@
 				vm.validResponse = false;
 				vm.errorResponse = false;
 
-				console.log(query);
 				FSDataService
 					.getVenueLocationsByType(query)
 					.then(function( response ) {

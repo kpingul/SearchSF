@@ -11,7 +11,6 @@
 		function SingleVenueCtrl($scope,MapService, slickBreakpoints, SingleVenueData, SimilarVenueData, $state){
 			var vm 		 	 = this;
 			vm.venue  	 	 = SingleVenueData;
-			console.log(vm.venue)
 			vm.reviewLim 	 = 5;
 			vm.slickBP 	 	 = slickBreakpoints.breakpoints;
 			vm.similarVenues = SimilarVenueData;

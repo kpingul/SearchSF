@@ -21,7 +21,6 @@
 			FSDataService.getVenueLocationsByType($stateParams.type)
 
 				.then(function(response) {
-					console.log(response);
 					vm.searchName = vm.searchType;
 					vm.venues = response;
 
