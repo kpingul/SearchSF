@@ -15,7 +15,6 @@
 
 					var active    	   = "active",
 						activeLink     = "activeLink",
-						overlay        = ".overlay",
 						loadingOverlay = "loadingOverlay",
 						spinner        = "#spinner";
 
@@ -26,7 +25,7 @@
 						if(attrs.sort){
 
 							$('li.activeLink').removeClass(activeLink);
-							$(overlay).addClass(loadingOverlay);
+					
 							$(spinner).addClass(active);
 
 							$timeout( function(){
@@ -35,7 +34,6 @@
 					
 								scope.$digest();
 								$(spinner).removeClass(active);
-								$(overlay).removeClass(loadingOverlay);
 								elem.parent().addClass(activeLink);
 
 							}, 800);
