@@ -1,34 +1,59 @@
+/*   
+
+Author: Kirck Pingul
+
+::  1.0 Global
+-------------------------------------------
+    1.1 Overlay state loading spinner
+    1.1 Filter loading spinner
+
+::  2.0 Navigaition Section 
+-------------------------------------------
+
+::  3.0 Footer Section
+-------------------------------------------
+
+::  4.0 Search Venue Section 
+-------------------------------------------
+
+::  5.0 Single Venue Section 
+-------------------------------------------
+    
+::  6.0 Media Breakpoint #1 @996px   
+-------------------------------------------
+    
+::  7.0 Media Breakpoint #2 @633px      
+-------------------------------------------
+    
+::  8.0 Media Breakpoint #3 @500px     
+-------------------------------------------
+    
+*/
+
 @import url(http://fonts.googleapis.com/css?family=Oswald:700);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
-body
-{
-    font-family: 'Raleway', sans-serif;
-       
+
+/* ************************************************* */
+/*                    1.0 Global                     */
+/* ************************************************* */
+body{
+    font-family: 'Raleway', sans-serif;   
 }
-h2
-{
+h2{
     margin: 0;
     margin-bottom: 2%;
 }
-.input-group
-{
+.input-group{
     width: 100%;
 }
-.input-group input
-{
+.input-group input{
     width: 80%;
 }
-.popover-content {
-    font-size: 11px;
-}
 
+/* 1.1 Overlay State loading Spinner */
 
-
-/* ************************************************* */
-/*                    Overlay  Spinner               */
-/* ************************************************* */
 #overlay {
     position: fixed;
     width: 100%;
@@ -71,199 +96,7 @@ h2
    to {transform: rotate(359deg);}
 }
 
-
-
-/* ************************************************* */
-/*                    Navigaition Section            */
-/* ************************************************* */
-.navbar
-{
-    border: 0;
-    border-radius: 0;
-    background: #4eaacf;
-}
-.navbar-default .navbar-brand
-{
-    color: #fff;
-}
-.navbar-default .navbar-brand:hover
-{
-    color: #fff;
-}
-.navbar-default .navbar-brand:visited
-{
-    color: #fff;
-}
-.footer {
-    color: #fff;
-    padding: 22px 40px;
-    background-color: #333;
-
-}
-
-/* ************************************************* */
-/*                    Search Venue Section           */
-/* ************************************************* */
-.Main_Search #home-header {
-
-  z-index: -1;
-  height: 80%;
-
-  background: url("../images/food.jpg") no-repeat ;
-  background-size: 100% 100%;
-
-}
-
-.middle{
-    position: absolute;
-  top: 45%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
--opera-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
-
-  transform: translate(-50%, -50%);
-  z-index: 999999;
-  width: 85%;
-  color: #FFFFFF;
-}
-
-.middle-title-1{
-    font-size: 3.8em;  text-align: center;
-    font-weight: bold;
-}
-.middle-title-2{
-    font-weight: bold;
-    font-size: 2.1em;  text-align: center;
-}
-.middle-title-3{
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 1em; color: #D2E6FFl; text-align: center;
-}
-.middle-form {
-    width: 40%;
-}
-#search{
-    color: #fff;
-    display: block;
-    border: 0;
-    background: #4eaacf; width: 100%; color: #fff;
-    padding: 7px 14px;
-    font-weight: bold;
-}
-#search:hover{
-  opacity: 0.9;
-}
-
-#overons{
-    padding-left: 5%;
-    padding-right: 5%;
-    min-height: 640px;
-    padding: 53px;
-
-}
-.search_description {
-    text-align: center;
-    padding-top: 40px;
-    letter-spacing: 0.1em;
-}
-.search_description h2, 
-.search_description h4{
-    font-weight: bold;
-}
-.search_description h4{
-    color: #6E6E6E;
-    margin-top: 10px;
-}
-.fa-stack{
-    color: #4eaacf;
-}
-
-.search_description_options{
-     text-align: center;
-       padding-bottom: 40px;
-}
-.searchVenueContainer{
-    padding: 0;
-    height: 92%;
-    position: relative;
-    overflow-y: scroll;
-}
-.searchVenueList
-{
-    padding: 0;
-    list-style-type: none;
-}
-.searchVenueList li
-{
-    padding: 10px 15px;
-    cursor: pointer;
-    border-bottom: 2px solid #1180C9;
-}
-.searchVenueList li:first-child{
-        border-top: 2px solid #1180C9;
-
-}
-.SearchVenueFilterContainer{
-    padding: 0 25px;
-}
-.searchVenueList li:hover{
-    background: #C0D0D6;
-}
-.SearchVenuePhoto
-{
-    width: 180px;
-}
-.searchVenueIndex{
-    font-size: 1.4em;
-    font-weight: bold;
-}
-.SearchVenueUserPhoto{
-    width: 30px;
-}
-.searchVenueBody
-{
-    letter-spacing: 0.05em;
-    width: 254px;
-}
-.searchVenueRating{
-     padding: 10px;
-
-    color: #fff;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-
-    background: #006c00;
-}
-.searchVenueAddress{
-    line-height: 2.4em;
-}
-.dropDownSearchList{
-    float: left;
-    margin-left: 5%;
-}
-
-.searhVenueUserTip{
-    font-size: 0.9em;
-    font-style: italic;
-    font-weight: bold;
-}
-
-.innerDropDownSearchList{
-    padding: 0;
-    list-style-type: none;
-}
-
-.well {
-    background: #fff;
-    border: 0;
-    border-top: 1px solid #D9D9D9;
-    border-bottom: 1px solid #D9D9D9;
-        font-size: 1em;
-
-}
+/* 1.2 Filter loading spinner */
 
 #spinner.active {
     display: block;
@@ -354,8 +187,200 @@ h2
   }
 }
 
-.loadingOverlay
+
+
+/* ************************************************* */
+/*                2.0 Navigaition Section            */
+/* ************************************************* */
+.navbar{
+    border: 0;
+    border-radius: 0;
+    background: #4eaacf;
+}
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover{
+    color: #fff;
+}
+.navbar-default .navbar-brand:visited{
+    color: #fff;
+}
+
+/* ************************************************* */
+/*                3.0 Footer Section                 */
+/* ************************************************* */
+.footer {
+    color: #fff;
+    padding: 22px 40px;
+    background-color: #333;
+}
+
+/* ************************************************* */
+/*                4.0 Search Venue Section           */
+/* ************************************************* */
+.Main_Search #home-header {
+
+  z-index: -1;
+  height: 80%;
+
+  background: url("../images/food.jpg") no-repeat ;
+  background-size: 100% 100%;
+
+}
+
+.middle{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -opera-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+    width: 85%;
+    color: #FFFFFF;
+}
+
+.middle-title-1{
+    font-size: 3.8em;  text-align: center;
+    font-weight: bold;
+}
+.middle-title-2{
+    font-weight: bold;
+    font-size: 2.1em;  text-align: center;
+}
+.middle-title-3{
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1em; color: #D2E6FFl; text-align: center;
+}
+.middle-form {
+    width: 40%;
+    margin: 0 auto;
+}
+#search{
+    color: #fff;
+    display: block;
+    border: 0;
+    background: #4eaacf; width: 100%; color: #fff;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+#search:hover{
+  opacity: 0.9;
+}
+
+#overons{
+    padding-left: 5%;
+    padding-right: 5%;
+    min-height: 640px;
+    padding: 53px;
+
+}
+.search_description {
+    text-align: center;
+    padding-top: 40px;
+    letter-spacing: 0.1em;
+}
+.search_description h2, 
+.search_description h4{
+    font-weight: bold;
+}
+.search_descsription h4{
+    color: #6E6E6E;
+    margin-top: 10px;
+}
+.fa-stack{
+    color: #4eaacf;
+}
+
+.search_description_options{
+     text-align: center;
+    padding-bottom: 40px;
+}
+.searchVenueContainer{
+    padding: 0;
+    height: 92%;
+    position: relative;
+    overflow-y: scroll;
+}
+.searchVenueList
 {
+    padding: 0;
+    list-style-type: none;
+}
+.searchVenueList li
+{
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 2px solid #1180C9;
+}
+.searchVenueList li:first-child{
+    border-top: 2px solid #1180C9;
+
+}
+.SearchVenueFilterContainer{
+    padding: 0 25px;
+}
+.searchVenueList li:hover{
+    background: #C0D0D6;
+}
+.SearchVenuePhoto
+{
+    width: 180px;
+}
+.searchVenueIndex{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.SearchVenueUserPhoto{
+    width: 30px;
+}
+.searchVenueBody
+{
+    letter-spacing: 0.05em;
+    width: 254px;
+}
+.searchVenueRating{
+     padding: 10px;
+    color: #fff;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: #006c00;
+}
+.searchVenueAddress{
+    line-height: 2.4em;
+}
+.dropDownSearchList{
+    float: left;
+    margin-left: 5%;
+}
+
+.searhVenueUserTip{
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.innerDropDownSearchList{
+    padding: 0;
+    list-style-type: none;
+}
+
+.well {
+    background: #fff;
+    border: 0;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    font-size: 1em;
+
+}
+
+
+.loadingOverlay{
     opacity: .60 !important; /* Make sure to change both of these, as IE only sees the second one */
 
 }
@@ -367,87 +392,69 @@ h2
 }
 
 /* ************************************************* */
-/*                    Single Venue Section           */
+/*                5.0 Single Venue Section           */
 /* ************************************************* */
 
 
-.multiple-items
-{
-    width: 90%;
+.multiple-items{    width: 90%;
     margin: 0 auto;
 }
 
-a
-.userReviewTotalLength{
+a.userReviewTotalLength{
     font-size: 1.2em;
     font-weight: bold;
 }
-.userReviewList
-{
+.userReviewList{
     line-height: 1.9em;
-
     padding: 0;
-
     list-style-type: none;
 }
-.userReviewList li
-{
+.userReviewList li{
     padding: 10px 0;
 }
 
-
 .glyphicon-time,
 .glyphicon-cutlery,
-.pricing
-{
+.pricing{
     font-size: 1.1em;
 }
-.closedVenue
-{
+.closedVenue{
     font-size: 1.1em;
     color: #cd0000;
 }
-.openVenue
-{
+.openVenue{
     color: #006c00;
     font-size: 1.1em;
 }
-.userReviewThumbnails
-{
+.userReviewThumbnails{
     width: 34px;
 }
 .businessInformationContainer{
     float: left;
-        padding: 10px;
+    padding: 10px;
 }
 .businessMenu{
     float: right;
     margin-top: 3%;
     padding: 10px;
 }
-.businessHoursTitle
-{
+.businessHoursTitle{
     color: #cd0000;
 }
-.businessHoursList
-{
+.businessHoursList{
     padding: 0;
 
     list-style-type: none;
 }
 
-.businessHoursList li
-{
+.businessHoursList li{
     padding: 12px 0;
 }
-.businessHourHours
-{
+.businessHourHours{
     float: right;
 }
 
-.addressName
-{
-
+.addressName{
     letter-spacing: 0.01em;
     text-align: center;
 }
@@ -459,8 +466,7 @@ a
     font-size: 0.9em;
 }
 
-.businessRating
-{
+.businessRating{
     font-size: 2.8em;
     padding: 9px 24px;
     color: #fff;
@@ -468,13 +474,11 @@ a
    
 }
 
-.businessInformationList
-{
+.businessInformationList{
     padding: 0;
     list-style-type: none;
 }
-.businessInformationList li
-{
+.businessInformationList li{
     padding-bottom: 12px ;
 }
 .businessMenu span{
@@ -482,14 +486,11 @@ a
     font-size: 1em;
 }
 
-
-.img-wrap
-{
+.img-wrap{
     position: relative;
     overflow: hidden;
 }
-.img-info
-{
+.img-info{
     position: absolute;
     z-index: 1000;
     bottom: 0;
@@ -500,20 +501,17 @@ a
     filter: alpha(opacity = 0);
 }
 .img-info h4,
-.img-info p
-{
+.img-info p{
     font-size: .9em;
     padding: 0 10px;
 }
-.img-wrap:hover .img-info
-{
+.img-wrap:hover .img-info{
     -webkit-transition: opacity .25s;
     -moz-transition: opacity .25s;
     transition: opacity .25s;
     opacity: .75;
     filter: alpha(opacity = 75);
 }
-
 .float-right{
     float: right;
 }
@@ -530,17 +528,13 @@ a
 }
 
 /* ************************************************* */
-/*            Media Breakpoint #1  @996px            */
+/*        6.0 Media Breakpoint #1  @996px            */
 /* ************************************************* */
-
-
 @media (max-width: 996px) {
     .pull-right{
         float: none!important;
     }
-
 }
-
 @media (max-width: 767px) {
     #mapCanvas{
         display: none;
@@ -553,11 +547,10 @@ a
 
 }
 /* ************************************************* */
-/*            Media Breakpoint #2  @633px            */
+/*        7.0 Media Breakpoint #2  @633px            */
 /* ************************************************* */
 
 @media (max-width: 633px) {
-    
     .businessInformationContainer{
         float: initial;
         text-align: center;
@@ -565,7 +558,7 @@ a
     .businessMenu{
         float: initial;
         margin-top:0;
-            text-align: center;
+        text-align: center;
     }
     .middle-title-1{
         font-size: 2em; ;
@@ -582,7 +575,7 @@ a
 }
 
 /* ************************************************* */
-/*            Media Breakpoint #3  @500px            */
+/*        8.0 Media Breakpoint #3  @500px            */
 /* ************************************************* */
 
 @media (max-width: 500px) {
@@ -591,7 +584,6 @@ a
         margin: 0 auto;
         text-align: center;
     }
-    
     .SearchVenuePhoto{
         width: 250px;
        margin: 0 auto;
