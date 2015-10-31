@@ -1,6 +1,6 @@
 /**
- * Angular Aplication
- *
+ * Author: Kirck Pingul
+ * Angular Aplication Root
  * 
  */
 
@@ -8,7 +8,9 @@
 	
 	'use strict';
 
-	angular.module('myApp', ['ui.router','slick']);
-
-
+	angular.module('myApp', [
+		'templates', 
+		'ui.router',
+		'slick'
+	]);
 }());

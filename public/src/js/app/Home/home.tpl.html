@@ -6,13 +6,9 @@
     <p class="middle-title-1"><span style="color: #4eaacf"><strong>We're</strong></span> here to help!</p>
     <p class="middle-title-3">Type in the food that you are craving here in San Francisco.</p>
     
-    
-    
     <form ng-submit="vm.searchRequest(vm.searchQuery)" class="middle-form">
-      
-      
       <div class="input-group">
-        <input type="text" id="input" class="form-control"  placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery"  ng-minlength="3" ng-maxlength="30" required>
+        <input type="text" id="input" class="form-control" name="searchTerm" placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery"  ng-minlength="3" ng-maxlength="30" required>
         <span class="input-group-btn">
           <button class="btn btn-default" ng-disabled="!vm.searchQuery" id="search" type="submit">SEARCH <i class="fa fa-spinner fa-spin" ng-if="!vm.validResponse"></i></button>
           <!-- ui-sref="main({type: vm.searchQuery})" -->
@@ -22,13 +18,10 @@
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <strong>Cannot find any results with <em>{{::vm.searchQuery}}</em> , please enter another search term.</strong>
         </div>
-        
-        
       </form>
       
-
-    </div>
-  </div>
+    </div><!-- end of middle -->
+  </div><!-- end of Main Search -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -59,7 +52,7 @@
       </div>
       
     </div>
-  </div>
+  </div><!-- end of container -->
   <div class="footer">
     <p>
       <span style="float: left">@SFSquare</span>
