@@ -1,99 +1,99 @@
 describe('Testing', function() {
 	
 	var $scope,
+		$rootScope,
 		$controller,
+		$q,
 		$httpBackend,
 		SearchVenueCtrl,
 		FSDataService,
-		MapService;
+		MapService,
+		mockService,
+		mockMapService;
 
 		beforeEach(function() {
 			module('myApp');
+				FSDataService = {
+					getVenueLocationsByType: function(query) {
+						var defer = $q.defer();
+						
+						defer.resolve({});
+					    
+					    return defer.promise;
+					}
+				}
 
-			inject(function(_$rootScope_, _$controller_,_$httpBackend_, _FSDataService_, _MapService_) {
+				MapService = {
+					setSearchVenueMap: function(query) {
+					
+					},
+					getSearchVenueMap: function() {
+
+					}
+				}
+
+
+
+
+			inject(function(_$rootScope_, _$controller_, _$q_) {
 
 				$scope        = _$rootScope_.$new();
+				$rootScope    = _$rootScope_;
 				$controller   = _$controller_;
-				$httpBackend  = _$httpBackend_;
-				FSDataService = _FSDataService_;
-				MapService    = _MapService_;
+				$q = _$q_;
 
 			});
 
 			SearchVenueCtrl = $controller('SearchVenueCtrl', {
-				$scope : $scope
-			})
+				$scope : $scope,
+				FSDataService: FSDataService,
+				MapService: MapService
+			});
 
-			$httpBackend.whenGET('https://api.foursquare.com/v2/venues/explore?near=San-Francisco&query=' + location + '&venuePhotos=1&limit=10&radius=10000&client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806').respond({name: "Kirck"});
-
-
-		});
-
-afterEach(function(){ 
-	$httpBackend.verifyNoOutstandingExpectation(); 
-
-	$httpBackend.verifyNoOutstandingRequest(); 
-});
-
-		describe('Initialization', function() {
 			
-			it('should have Search Venue Controller', function() {
-				expect(SearchVenueCtrl).toBeDefined();
-			});
-
-			it('should have FSDataService', function() {
-				expect(FSDataService).toBeDefined();
-			});
-			it('should have MapService', function() {
-				expect(MapService).toBeDefined();
-			});
-
-			it('should have model of array of venues', function() {
-				expect(SearchVenueCtrl.venues).toEqual([]);
-			});	
-			it('should have model containing current time', function() {
-				expect(SearchVenueCtrl.time).toEqual(new Date().toLocaleTimeString().replace(/:\d+ /, ' '));
-			});	
-			it('should have model venue filtet set to false', function() {
-				expect(SearchVenueCtrl.venueFilter).toBeFalsy();
-			});
-			it('should have model of sortType set to empty', function() {
-				expect(SearchVenueCtrl.sortType).toEqual("");
-			});
-			it('should have model of location set to empty', function() {
-				expect(SearchVenueCtrl.location).toEqual("");
-			});
-		
-			it('should contain duplicate function', function() {
-				expect(SearchVenueCtrl.duplicate).toBeDefined();
-			});
 
 
 		});
 
-		describe('User Search', function() {
-			it('should allow user to search for a venue', function() {
-				expect(SearchVenueCtrl.search).toBeDefined();
-			});
-
-			it('should allow user to view  multiple venues', function() {
-				$httpBackend.expectGET('https://api.foursquare.com/v2/venues/explore?near=San-Francisco&query=' + SearchVenueCtrl.location + '&venuePhotos=1&limit=10&radius=10000&client_id=RHV1ZD3K1SPFECIGDWMOXRVQ3TGNQTUGA0QF1K1GQJ0EICIF&client_secret=4RJLQAZNTF2LE4DCSBHJKNC1BBHDUEQBSHIAFCML4GYPXGNQ&v=20140806').respond({name:"Kirck"})
-
-
-				SearchVenueCtrl.search();
-			
 		
-
-				FSDataService.getVenueLocations(SearchVenueCtrl.location);
-				$httpBackend.flush();
-				
-
-			});
-
-
-		
+		it('should have a search venue ctrl', function() {
+			expect(SearchVenueCtrl).toBeDefined();
+		});		
+		it('should have FSDataService defined', function() {
+			expect(FSDataService).toBeDefined();
+		});		
+		it('should have MapService defined', function() {
+			expect(MapService).toBeDefined();
+		});		
+		it('should have declared ariables', function() {
+			expect(SearchVenueCtrl.venues).toBeDefined();
+			expect(SearchVenueCtrl.venueFilter).toBeDefined();
+			expect(SearchVenueCtrl.sortType).toBeDefined();
+			expect(SearchVenueCtrl.searchType).toBeDefined();
 		});
 
 
+		it('should have a duplicate method', function() {
+			expect(SearchVenueCtrl.duplicate).toBeDefined();
+		});
+		it('should return a string when duplicate method is called', function() {
+			expect(SearchVenueCtrl.duplicate("test", 1)).toEqual('test ');
+		});
+		it('should call FSDataService getVenueLocationsByType', function() {
+
+			$rootScope.$apply();
+			spyOn(FSDataService, 'getVenueLocationsByType').and.callThrough();
+			spyOn(MapService, 'getSearchVenueMap').and.callThrough();
+			spyOn(MapService, 'setSearchVenueMap').and.callThrough();
+			FSDataService.getVenueLocationsByType({})
+			MapService.getSearchVenueMap();
+			MapService.setSearchVenueMap();
+			expect(FSDataService.getVenueLocationsByType).toHaveBeenCalled();
+			expect(SearchVenueCtrl.venues).toEqual({});
+			expect(SearchVenueCtrl.venueFilter).toBeTruthy();
+			expect(SearchVenueCtrl.sortType).toEqual("");
+			expect(SearchVenueCtrl.searchType).toEqual("");
+
+		});
 
 });

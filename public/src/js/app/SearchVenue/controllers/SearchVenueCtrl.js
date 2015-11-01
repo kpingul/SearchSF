@@ -13,7 +13,6 @@
 			var vm         = this;
 
 			vm.venues      = [];
-			vm.time        = new Date().toLocaleTimeString().replace(/:\d+ /, ' ');
 			vm.venueFilter = false;
 			vm.sortType    = "";
 			vm.searchType    = "";

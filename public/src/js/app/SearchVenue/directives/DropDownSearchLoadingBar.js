@@ -1,37 +1,36 @@
-(function(){
+(function() {
 
 	'use strict';
 
 	angular.module('myApp')
 
-		.directive('loadingBar', ['$timeout',  function($timeout){
+	.directive('loadingBar', ['$timeout',
+		function($timeout) {
 
 			return {
 				restrict: 'A',
 
+				link: function(scope, elem, attrs) {
 
-				link: function(scope, elem, attrs){
-
-
-					var active    	   = "active",
-						activeLink     = "activeLink",
+					var active = "active",
+						activeLink = "activeLink",
 						loadingOverlay = "loadingOverlay",
-						spinner        = "#spinner";
+						spinner = "#spinner";
 
 					elem.on('click', activate);
-					
-					function activate(event){
 
-						if(attrs.sort){
+					function activate(event) {
+
+						if (attrs.sort) {
 
 							$('li.activeLink').removeClass(activeLink);
-					
+
 							$(spinner).addClass(active);
 
-							$timeout( function(){
+							$timeout(function() {
 
-								scope.vm.sortType =  attrs.sort;
-					
+								scope.vm.sortType = attrs.sort;
+
 								scope.$digest();
 								$(spinner).removeClass(active);
 								elem.parent().addClass(activeLink);
@@ -41,24 +40,21 @@
 						}
 
 
-							$(overlay).addClass(loadingOverlay);
-							$(spinner).addClass(active);
+						$(overlay).addClass(loadingOverlay);
+						$(spinner).addClass(active);
 
-							$timeout( function(){
+						$timeout(function() {
 
-								$(spinner).removeClass(active);
-								$(overlay).removeClass(loadingOverlay);
+							$(spinner).removeClass(active);
+							$(overlay).removeClass(loadingOverlay);
 
-							}, 800);
-
-					
-					
+						}, 800);
 
 					}
 
 
 				}
 			};
-
-		}]);
+		}
+	]);
 }());

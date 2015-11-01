@@ -6,21 +6,23 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', '$q'];
 
-		function HomeCtrl($scope, $timeout, $state, FSDataService){
+		function HomeCtrl($scope, $timeout, $state, FSDataService, $q){
 			
 			var vm = this;
 			vm.validResponse = true;
+			vm.errorResponse = false;
+
 
 			vm.searchRequest = function(query) {
-				vm.validResponse = false;
-				vm.errorResponse = false;
 
 				FSDataService
 					.getVenueLocationsByType(query)
 					.then(function( response ) {
 	
+						vm.validResponse = false;
+
 						if( response.length > 0 ) {
 							$timeout(function() {
 								vm.validResponse = true;
