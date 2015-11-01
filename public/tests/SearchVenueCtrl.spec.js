@@ -1,4 +1,4 @@
-describe('Testing', function() {
+describe('Search Venue Controller tests', function() {
 
 	var $scope,
 		$rootScope,

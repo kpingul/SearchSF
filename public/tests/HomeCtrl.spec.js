@@ -1,4 +1,4 @@
-describe('Testing', function() {
+describe('Home Controller Tests', function() {
 
     var $scope,
         $controller,
