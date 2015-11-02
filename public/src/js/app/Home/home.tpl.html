@@ -8,7 +8,7 @@
     
     <form ng-submit="vm.searchRequest(vm.searchQuery)" class="middle-form">
       <div class="input-group">
-        <input type="text" id="input" class="form-control" name="searchTerm" placeholder="e.g. Steak or Fries" ng-model="vm.searchQuery"  ng-minlength="3" ng-maxlength="30" required>
+        <input type="text" id="input" class="form-control" name="searchTerm" placeholder="e.g. Pasta or Pizza" ng-model="vm.searchQuery"  ng-minlength="3" ng-maxlength="30" required>
         <span class="input-group-btn">
           <button class="btn btn-default" ng-disabled="!vm.searchQuery" id="search" type="submit">SEARCH <i class="fa fa-spinner fa-spin" ng-if="!vm.validResponse"></i></button>
           <!-- ui-sref="main({type: vm.searchQuery})" -->
@@ -28,7 +28,7 @@
         <div class="search_description">
           <h2>Find a new favorite spot</h2>
           
-          <h4>SFSquare helps you analyze the restaurants.</h4>
+          <h4 class="search_description_subTitle">SFSquare helps you analyze the restaurants.</h4>
           
         </div>
       </div>
@@ -39,16 +39,16 @@
           <i class="fa fa-circle fa-stack-2x "></i>
           <i class="fa fa-search fa-stack-1x fa-inverse"></i>
         </span>
-        <h4><b>1). Enter a Search Term</b></h4>
-        <p>Enter the type of food or restaurant you're looking for. Examples: pizza, chicken sandwich, oysters, shrimp, etc.</p>
+        <h4 class="search_description_st_title"><b>1). Enter a Search Term</b></h4>
+        <p class="search_description_st_description">Enter the type of food or restaurant you're looking for. Examples: pizza, chicken sandwich, oysters, shrimp, etc.</p>
       </div>
       <div class="col-md-6">
         <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x "></i>
           <i class="fa fa fa-list fa-stack-1x fa-inverse"></i>
         </span>
-        <h4><b>2). Listed Results Displayed</b></h4>
-        <p>We will generate a list of possible options around the San Francisco area based on your search term.</p>
+        <h4  class="search_description_st_title" ><b>2). Listed Results Displayed</b></h4>
+        <p class="search_description_st_description">We will generate a list of possible options around the San Francisco area based on your search term.</p>
       </div>
       
     </div>

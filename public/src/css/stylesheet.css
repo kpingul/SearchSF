@@ -294,6 +294,11 @@ h2{
     color: #6E6E6E;
     margin-top: 10px;
 }
+.search_description_subTitle{
+    color: #777777;
+    font-weight: bold;
+}
+
 .fa-stack{
     color: #4eaacf;
 }
@@ -650,6 +655,13 @@ a.userReviewTotalLength{
     .search_description h4{
         font-size: 1em;
     }
+    .search_description_st_title{
+        font-size: 1.2em;
+    }
+    .search_description_st_description{
+        font-size: 0.88em;
+    }
+    .
     .spinner {
         position: absolute;
         left: 40%;
