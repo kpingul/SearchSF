@@ -47,7 +47,7 @@
 						    </a>
 						  </div>
 						  <div class="media-body">
-						    <h4 class="media-heading"><span class="mapVenueTitle"><a href="/venue/' + venueInformation[i].id + '">' + venueInformation[i].title + '</a></span> <small class="mapVenueStatus">(' + venueInformation[i].status + ')</small></h4>
+						    <h4 class="media-heading"><span class="mapVenueTitle"><span>' + venueInformation[i].title + '</span></span> <small class="mapVenueStatus">(' + venueInformation[i].status + ')</small></h4>
 						    <span class ="mapVenueRating" style="float: left">' + venueInformation[i].rating + '</span> <span class ="mapVenueAddress">' + venueInformation[i].address + '</span>  &#x2022;
 						  	<small class="mapVenueType">' + venueInformation[i].type + '</small>
 						  </div>
