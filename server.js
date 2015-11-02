@@ -19,4 +19,5 @@ app.listen(config.port, function() {
 	//once the request is sent from client
 	//req.params
 	//foursquare.venues.venue(findVenueById)
-		//render html page by res.render('template', {data}) so that the data is binded to templates
+		//render html page by res.render('template', {data})
+			
