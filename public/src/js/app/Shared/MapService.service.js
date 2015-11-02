@@ -59,7 +59,7 @@
 
 				} else { 
 
-					var map = L.map('venue-canvas', {scrollWheelZoom: false, touchZoom: false, dragging: false}).setView([venue[0].lat, venue[0].lng], 14);
+					var map = L.map('venue-canvas', {scrollWheelZoom: false, touchZoom: false, tap: false}).setView([venue[0].lat, venue[0].lng], 14);
 
 					L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 					    maxZoom: 18,
