@@ -59,7 +59,7 @@
 
 				} else { 
 
-					var map = L.map('venue-canvas', {scrollWheelZoom: false, touchZoom: false, tap: false}).setView([venue[0].lat, venue[0].lng], 14);
+					var map = L.map('venue-canvas', {zoomControl: false}).setView([venue[0].lat, venue[0].lng], 14);
 
 					L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 					    maxZoom: 18,
@@ -69,6 +69,15 @@
 					L.marker([venue[0].lat, venue[0].lng])
 						.bindPopup(venue[0].title)
 						.addTo(map);
+
+					map.dragging.disable();
+					map.touchZoom.disable();
+					map.doubleClickZoom.disable();
+					map.scrollWheelZoom.disable();
+
+					// Disable tap handler, if present.
+					if (map.tap) map.tap.disable();
+
 				
 				}
 			
