@@ -16,17 +16,29 @@
 			vm.venueFilter = false;
 			vm.sortType    = "";
 			vm.searchType    = "";
-			
+			vm.query = $stateParams.type;
+			vm.allMarkers = [];
+
+			vm.actMap = function(lat) {
+				for( var i = 0; i < vm.allMarkers.length; i++) {
+
+					if( vm.allMarkers[i]._latlng.lat == lat ) {
+		
+						vm.allMarkers[i].openPopup();
+					}	
+				}
+			}
+
 			FSDataService.getVenueLocationsByType($stateParams.type)
 
 				.then(function(response) {
-					vm.searchName = vm.searchType;
+					vm.searchName = vm.searchType
+					console.log(response);;
 					vm.venues = response;
 
-					//Set and Get Map Data 
-					MapService.setSearchVenueMap(response);
-					MapService.getSearchVenueMap();
-
+					//Get Map Data 
+					MapService.getSearchVenueMap(response);
+					vm.allMarkers = MapService.getAllMarkers();
 					//show Search Venue Filter
 					vm.venueFilter = true;
 					vm.searchType = "";

@@ -15,8 +15,14 @@
 			vm.slickBP 	 	 = slickBreakpoints.breakpoints;
 			vm.similarVenues = SimilarVenueData;
 			vm.hours 		 = [];
-
-			MapService.setVenueMap(SingleVenueData.location.lat, SingleVenueData.location.lng, SingleVenueData.name);
+			vm.mapVenue = [
+				{
+					lat: SingleVenueData.location.lat, 
+					lng: SingleVenueData.location.lng, 
+					title: SingleVenueData.name
+				}
+			]
+			MapService.getSearchVenueMap(vm.mapVenue);
 
 			vm.viewSimilarVenue = function(venueID){
 				$state.go('venue', {venueID: venueID});

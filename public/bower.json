@@ -26,5 +26,8 @@
   },
   "resolutions": {
     "slick-carousel": "~1.4.1"
+  },
+  "dependencies": {
+    "leaflet": "~0.7.7"
   }
 }
