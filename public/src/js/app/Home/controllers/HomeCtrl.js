@@ -6,16 +6,28 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', '$q'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', '$q', '$http'];
 
-		function HomeCtrl($scope, $timeout, $state, FSDataService, $q){
+		function HomeCtrl($scope, $timeout, $state, FSDataService, $q, $http){
 			
 			var vm = this;
 			vm.validResponse = true;
 			vm.errorResponse = false;
 
+			$http.get('/api/allData')
+					.then(function(response) {
+
+					})
+					.catch(function(error) {
+						console.log(error);
+					});
 
 			vm.searchRequest = function(query) {
+				$http.post('/api/data', {title: query})
+						.then(function (response) {
+						
+						})
+						
 
 				FSDataService
 					.getVenueLocationsByType(query)

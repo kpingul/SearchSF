@@ -33,7 +33,7 @@
 
 				.then(function(response) {
 					vm.searchName = vm.searchType
-					console.log(response);;
+		
 					vm.venues = response;
 
 					//Get Map Data 
