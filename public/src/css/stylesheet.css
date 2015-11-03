@@ -421,10 +421,10 @@ h2{
     font-weight: bold;
 }
 .mapVenueRating{
-    padding:10px;
+    padding:7px 16px;
     color: #fff;
     background: #006c00;
-    font-size: 13px;
+    font-size: 18px;;
 }
 .mapVenueAddress{
     padding-left: 5px;
@@ -438,9 +438,7 @@ h2{
     font-size: 1em;
     
 }
-.mapVenueImage{
-    margin-top: 12px;
-}
+
 .mapVenueBottomImage{
     padding: 8px;
     display: block;

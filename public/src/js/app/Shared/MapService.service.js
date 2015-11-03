@@ -43,13 +43,14 @@
 						var html = '<div class="media">
 						  <div class="media-left">
 						    <a href="">
-						      <img class="media-object mapVenueImage" height="50"  src="' + venueInformation[i].img + '" alt="...">
+						      <img class="media-object mapVenueImage" height="57"  src="' + venueInformation[i].img + '" alt="...">
+						      <span class ="mapVenueRating">' + venueInformation[i].rating + '</span>
 						    </a>
 						  </div>
 						  <div class="media-body">
 						    <h4 class="media-heading" id="mapVenueMediaHeading"><span class="mapVenueTitle"><span>' + venueInformation[i].title + '</span></span> <small class="mapVenueStatus">(' + venueInformation[i].status + ')</small></h4>
-						    <span class ="mapVenueRating">' + venueInformation[i].rating + '</span> <span class ="mapVenueAddress">' + venueInformation[i].address + ' &#x2022;</span>
-						  	<small class="mapVenueType">' + venueInformation[i].type + '</small> &#x2022; <small class="mapVenueUrl"><a href="' + venueInformation[i].menu + '">view menu</a></small>
+						    <p><span class ="mapVenueAddress">' + venueInformation[i].address + ' &#x2022;</span>
+						  	<small class="mapVenueType">' + venueInformation[i].type + '</small> &#x2022; <small class="mapVenueUrl"><a href="' + venueInformation[i].menu + '">view menu</a></small></p>
 						  </div>
 						</div>'
 						allMarkers.push(L.marker([venueInformation[i].lat, venueInformation[i].lng])
