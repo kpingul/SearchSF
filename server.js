@@ -6,8 +6,14 @@ var express 	= require('express'),
 	app     	= express(),
 	config      = require('./server/config/config');
 
+
+
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
+
+require('./server/routers/router')(app);
+
 mongoose.connect('mongodb://kpingul:spacejam23@ds049104.mongolab.com:49104/heroku_g9j5w3hh');
 var Schema = mongoose.Schema;
 var DataModel = new Schema({
@@ -23,19 +29,19 @@ var DataModel = new Schema({
 });
 var Data = mongoose.model('data', DataModel);
 
-app.get('/api/allData', function( req, res ) {
-	Data.find({}, function(err, userData) {
-		if(err) {
-			res.send(err);
-		}
+// app.get('/api/allData', function( req, res ) {
+// 	Data.find({}, function(err, userData) {
+// 		if(err) {
+// 			res.send(err);
+// 		}
 
-		if(userData.length) {
-			res.send(userData);
-		}
+// 		if(userData.length) {
+// 			res.send(userData);
+// 		}
 
 
-	});
-});
+// 	});
+// });
 
 app.post('/api/data', function(req, res) {
 	console.log(req.body.title);
@@ -50,9 +56,6 @@ app.post('/api/data', function(req, res) {
 	});
 });
 
-
-
-require('./server/routers/router')(app);
 
 
 app.listen(config.port, function() {

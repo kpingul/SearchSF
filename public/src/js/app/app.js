@@ -9,6 +9,7 @@
 	angular.module('myApp', [
 		'templates', 
 		'ui.router',
-		'slick'
+		'slick',
+		'ngAutocomplete'
 	]);
 }());

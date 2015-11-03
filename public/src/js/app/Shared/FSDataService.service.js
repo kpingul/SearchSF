@@ -22,12 +22,10 @@
 
 			};
 
-			function getVenueLocationsByType(query){
-
-				return $http.get('/api/venues/' + query)
+			function getVenueLocationsByType(foodType, ll){
+				return $http.get('/api/venues/' + foodType + '/' + ll)
 								.then(function(response){
 									if(response) {
-
 										var venues = response.data.response.groups[0].items;
 										var venueMixin = [];
 										return venues;

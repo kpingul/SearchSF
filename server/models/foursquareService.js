@@ -49,14 +49,18 @@ module.exports = (function() {
 	}
 
 	function searchVenues( req, res ) {
-		var type = req.params.type;
+		var type = req.params.foodType;
+		var latLng = req.params.ll;
+
+		if(type !== undefined && latLng !== undefined) {
+			foursquare.venues.explore({ll: latLng, query: type, radius: "10000", venuePhotos: "1"}, function(err, response) {
+				if(err) {
+					res.status(500).send({error: "error with API"});
+				}
+				res.send(response);
+			});
+		}
 	
-		foursquare.venues.explore({near: "San Francisco", query: type, radius: "10000", venuePhotos: "1"}, function(err, response) {
-			if(err) {
-				res.status(500).send({error: "error with API"});
-			}
-			res.send(response);
-		});
 
 	}
 

@@ -6,7 +6,7 @@ module.exports = (function() {
 
 	var router = express.Router();
 
-	router.get('/:type', foursquareService.searchVenues); 
+	router.get('/:foodType/:ll', foursquareService.searchVenues); 
 
 	return router;
 

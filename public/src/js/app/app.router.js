@@ -11,12 +11,12 @@
 			$stateProvider
 				.state('home', {
 					url: '/',
-					templateUrl: 'src/js/app/Home/home.tpl.html',
+					templateUrl: 'src/js/app/Home/templates/home.tpl.html',
 					controller: 'HomeCtrl',
 					controllerAs: 'vm'
 				})
 				.state('main', {
-					url: '/search/:type',
+					url: '/search/:type/:latLng',
 					templateUrl: 'src/js/app/SearchVenue/templates/Main.tpl.html',
 					controller: 'SearchVenueCtrl',
 					controllerAs: 'vm'

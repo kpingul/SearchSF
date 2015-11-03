@@ -47,9 +47,9 @@
 						    </a>
 						  </div>
 						  <div class="media-body">
-						    <h4 class="media-heading"><span class="mapVenueTitle"><span>' + venueInformation[i].title + '</span></span> <small class="mapVenueStatus">(' + venueInformation[i].status + ')</small></h4>
-						    <span class ="mapVenueRating" style="float: left">' + venueInformation[i].rating + '</span> <span class ="mapVenueAddress">' + venueInformation[i].address + '</span>  &#x2022;
-						  	<small class="mapVenueType">' + venueInformation[i].type + '</small>
+						    <h4 class="media-heading" id="mapVenueMediaHeading"><span class="mapVenueTitle"><span>' + venueInformation[i].title + '</span></span> <small class="mapVenueStatus">(' + venueInformation[i].status + ')</small></h4>
+						    <span class ="mapVenueRating">' + venueInformation[i].rating + '</span> <span class ="mapVenueAddress">' + venueInformation[i].address + ' &#x2022;</span>
+						  	<small class="mapVenueType">' + venueInformation[i].type + '</small> &#x2022; <small class="mapVenueUrl"><a href="' + venueInformation[i].menu + '">view menu</a></small>
 						  </div>
 						</div>'
 						allMarkers.push(L.marker([venueInformation[i].lat, venueInformation[i].lng])
@@ -95,8 +95,9 @@
 					id: item.venue.id,
 					type: item.venue.categories[0].name,
 					address: item.venue.location.address,
+					menu: item.venue.menu ? item.venue.menu.url : '',
 					rating: item.venue.rating,
-					status: item.venue.hours.status,
+					status: item.venue.hours ? item.venue.hours.status : '',
 					img: item.venue.categories[0].icon.prefix + 'bg_32' + item.venue.categories[0].icon.suffix,
 					title: item.venue.name,
 					lat: item.venue.location.lat,

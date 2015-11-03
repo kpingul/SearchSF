@@ -17,6 +17,7 @@
 			vm.sortType    = "";
 			vm.searchType    = "";
 			vm.query = $stateParams.type;
+			vm.ll = $stateParams.latLng;
 			vm.allMarkers = [];
 
 			vm.actMap = function(lat) {
@@ -29,11 +30,10 @@
 				}
 			}
 
-			FSDataService.getVenueLocationsByType($stateParams.type)
+			FSDataService.getVenueLocationsByType($stateParams.type, $stateParams.latLng)
 
 				.then(function(response) {
 					vm.searchName = vm.searchType
-		
 					vm.venues = response;
 
 					//Get Map Data 
