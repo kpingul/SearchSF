@@ -6,14 +6,14 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics', '$window'];
 
-		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics){
+		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics, $window){
 			
 			var vm = this;
 			vm.validResponse = true;
 			vm.errorResponse = false;
-
+			vm.locationResponse = false;
 
 			vm.searchRequest = function(foodType, location) {
 				var lat = location.geometry.location.lat();

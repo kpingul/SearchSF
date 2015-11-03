@@ -52,7 +52,15 @@ h2{
 .input-group input{
     width: 80%;
 }
+.pac-container{
 
+    z-index: 1200000 !important;
+
+}
+
+.pac-item:hover {
+    background: #4eaacf !important;
+}
 /* 1.1 Overlay State loading Spinner */
 
 #overlay {
