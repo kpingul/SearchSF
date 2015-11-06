@@ -767,8 +767,8 @@ a.userReviewTotalLength{
     }
 }
 
-@media (max-width: 320px) {
-    .middle h3 {
-        margin-top: 28px;
+@media (max-width: 360px) {
+    .middle-form-section {
+        padding-top: 15px;
     }
 }
