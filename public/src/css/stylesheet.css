@@ -243,7 +243,7 @@ h2{
 
 .middle{
     position: absolute;
-    top: 19%;
+    top: 23%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -274,6 +274,13 @@ h2{
     float:right;
     font-size: 0.8em;
 }
+.middle-about a {
+    color: #fff;
+}
+.middle-about a:hover{
+    text-decoration: none;
+    color: #4eaacf;
+}
 .middle-title-1{
     font-size: 3.8em; 
     font-weight: bold;
@@ -295,7 +302,7 @@ h2{
 .middle-form-section {
     text-align: center;
     position: relative;
-    top: 160px;
+    top: 118px;
 }
 .middle-form-button{
     height: 34.1px;
@@ -769,7 +776,6 @@ a.userReviewTotalLength{
         top: 40%;
     }
 }
-
 
 @media (max-width: 320px) {
     .middle h3 {
