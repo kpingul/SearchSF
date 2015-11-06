@@ -231,11 +231,9 @@ h2{
 /* ************************************************* */
 /*                4.0 Search Venue Section           */
 /* ************************************************* */
-.Main_Search #home-header {
-
+.Main_Search {
   z-index: -1;
-  height: 79%;
-  padding: 25px;
+  padding: 5px;
   background: url("../images/food.jpg") no-repeat ;
   background-size: 100% 100%;
     
@@ -288,6 +286,7 @@ h2{
     text-align: center;
     color: #fff;
     padding-top: 100px;
+    padding-bottom: 53px;
 }
 .middle-form-button{
     height: 34.1px;
@@ -654,7 +653,7 @@ a.userReviewTotalLength{
 
 @media (min-height: 800px) {
     .middle-form-section {
-        padding-top: 160px;
+        padding-top: 240px;
     }
 }
 /* ************************************************* */
