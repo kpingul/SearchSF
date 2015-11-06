@@ -7,8 +7,6 @@ var express 	= require('express'),
 	config      = require('./server/config/config');
 
 
-
-
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
@@ -29,19 +27,23 @@ var DataModel = new Schema({
 });
 var Data = mongoose.model('data', DataModel);
 
-// app.get('/api/allData', function( req, res ) {
-// 	Data.find({}, function(err, userData) {
-// 		if(err) {
-// 			res.send(err);
-// 		}
+var yelp = require("yelp").createClient({
+  consumer_key: "zbI4z6bbwmxpHCoKLpF0qQ", 
+  consumer_secret: "V77AKbIp-OtvQzDQxEubVxWiNtY",
+  token: "QTH04f87wjMCvGKookQdH3k3jaFrAOaE",
+  token_secret: "Ro9badpwy6wXseUWWGXHrzyYvEY"
+});
 
-// 		if(userData.length) {
-// 			res.send(userData);
-// 		}
+app.get('/api/yelp/business/:id', function(req, res) {
+	yelp.business(req.params.id, function(error, data) {
+	  if(error) {
+	  	res.sendStatus(error);
+	  }
 
+	  res.send(data);
+	});
+});
 
-// 	});
-// });
 
 app.post('/api/data', function(req, res) {
 	console.log(req.body.title);
@@ -58,12 +60,8 @@ app.post('/api/data', function(req, res) {
 
 
 
+
 app.listen(config.port, function() {
 	console.log("Listening on port " + config.port);
 });
 
-// create API for venue/idOfVenue
-	//once the request is sent from client
-	//req.params
-	//foursquare.venues.venue(findVenueById)
-		//render html page by res.render('template', {data})

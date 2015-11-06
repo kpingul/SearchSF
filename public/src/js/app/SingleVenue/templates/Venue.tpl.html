@@ -93,6 +93,13 @@
 					
 		</div><!-- end of row -->
 
+		<div class="row">
+			<div class="col-md-12">
+				
+						<h1><strong><i class="fa fa-foursquare"></i>Total Number of Checkins vs. Similar Venues</strong></h1>
+			</div>
+		</div>
+
 		<div class="row">					
 			<div class="col-md-9">											
 				<h2>Recommended Reviews</h2>
@@ -108,7 +115,7 @@
 				</div><!-- end of panel -->
 						
 				<ul class="userReviewList">
-					<li ng-repeat="user in vm.venue.tips.groups[0].items | filter: vm.phraseName| orderBy: vm.sortType | limitTo: vm.reviewLim ">							
+					<li ng-repeat="user in vm.venue.tips.groups[0].items | filter: vm.phraseName| orderBy: vm.sortType | limitTo: vm.reviewLim">							
 						<div class="media">
 							<div class="media-left">
 								<img class="media-object userReviewThumbnails" ng-src="{{user.user.photo.prefix}}300x300{{user.user.photo.suffix}}" >
@@ -122,7 +129,13 @@
 						</div><!-- end of media -->
 					</li><!-- end of ng repeat  user  values -->
 					<center>
-						<button class="btn btn-primary btn-md" ng-disabled='vm.reviewLim === vm.venue.tips.groups[0].items.length' view-more-reviews>Load More Reviews</button>
+						<button 
+							class="btn btn-primary btn-md" 
+							ng-disabled='vm.reviewLim === vm.venue.tips.groups[0].items.length' 
+							ng-click="vm.loadMoreReviews()">
+							Load More Reviews
+							<i class="fa fa-spinner fa-spin" ng-if="vm.toggleReviews"></i>
+						</button>
 					<center>
 				</ul><!-- end of user review list -->
 				

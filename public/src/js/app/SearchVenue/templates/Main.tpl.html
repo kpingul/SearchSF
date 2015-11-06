@@ -69,7 +69,7 @@
 						</div> <!-- SearchVenueFilterContainer -->
 						
 						<ul class="searchVenueList">
-							<li ng-repeat="venue in vm.venues | orderBy: vm.sortType  track by $index " ng-click="vm.actMap(venue.venue.location.lat)">
+							<li ng-repeat="venue in vm.venues | orderBy: vm.sortType |limitTo: vm.venueLimit track by $index " ng-mouseover="vm.actMap(venue.venue.location.lat)">
 
  								<div class="media">
 									<div class="media-left SearchVenuePhotoContainer">
@@ -111,8 +111,20 @@
 										alt="">
 										
 										<span  class="searhVenueUserTip">{{venue.tips[0].text}}</span>									
-								</div><!-- end of media -->									
+								</div><!-- end of media -->	
+								
+
 							</li><!-- end of ng repeat venue -->
+							
+							<div class="SearchVenueLoadingContainer">	
+								<button
+									 class="btn btn-primary btn-md" 
+									 ng-disabled="vm.loadMoreVenue" 
+									 ng-click="vm.showMoreVenues()">
+									 Load More Venues
+									<i class="fa fa-spinner fa-spin" ng-if="vm.toggleVenues"></i>
+								</button>
+							</div>
 						</ul><!-- end of search venue list -->						
 					</div><!-- end of col-md-6 -->
 					<div class="col-xs-12 col-sm-6 col-md-6" style="padding: 0" >

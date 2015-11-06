@@ -1,12 +1,19 @@
+
 <div class="Main_Search">
   <div id="home-header">
   </div>
+
   <div class="middle">
-    <p class="middle-title-2">Feeling Hungry?</p>
-    <p class="middle-title-1"><span style="color: #4eaacf"><strong>We're</strong></span> here to help!</p>
+    <h3>
+      <span  ui-sref="home" class="middle-title">Eat36Five</span> 
+      <!-- <span class="middle-about">About us</span> -->
+    </h3>
+
 
 
     <div class="middle-form-section">
+      <p class="middle-title-2">Feeling Hungry?</p>
+      <p class="middle-title-1"><strong>We're</strong> here to help!</p>
       
       <form ng-submit="vm.searchRequest(vm.searchQuery, searchLocationDetails)" class="form-inline" >
         <label for="locationTerm" class="middle-title-3">Your Location</label>
@@ -86,7 +93,7 @@
           <i class="fa fa-circle fa-stack-2x "></i>
           <i class="fa fa-search fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="search_description_st_title"><b>1). Enter Your Location</b></h4>
+        <h4 class="search_description_st_title"><b>Enter Your Location</b></h4>
         <p class="search_description_st_description">Enter your current location by typing in your current address or city. Examples: 1031 Market St. San Francisco, Ca</p>
       </div>
       <div class="col-md-4">
@@ -94,7 +101,7 @@
           <i class="fa fa-circle fa-stack-2x "></i>
           <i class="fa fa fa-list fa-stack-1x fa-inverse"></i>
         </span>
-        <h4  class="search_description_st_title" ><b>2). Enter Search Term</b></h4>
+        <h4  class="search_description_st_title" ><b>Enter Search Term</b></h4>
         <p class="search_description_st_description">Enter the type of food or restaurant you're looking for. Examples: pizza, chicken sandwich, oysters, shrimp, etc.</p>
       </div>  
       <div class="col-md-4">
@@ -102,7 +109,7 @@
           <i class="fa fa-circle fa-stack-2x "></i>
           <i class="fa fa fa-list fa-stack-1x fa-inverse"></i>
         </span>
-        <h4  class="search_description_st_title" ><b>3). Results will be displayed</b></h4>
+        <h4  class="search_description_st_title" ><b>Results will be displayed</b></h4>
         <p class="search_description_st_description">We will generate a list of possible options around your area based on the desired term.</p>
       </div>
       

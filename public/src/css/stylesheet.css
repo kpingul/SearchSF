@@ -22,11 +22,14 @@ Author: Kirck Pingul
     
 ::  6.0 Media Breakpoint #1 @996px   
 -------------------------------------------
-    
-::  7.0 Media Breakpoint #2 @633px      
+
+::  7.0 Media Breakpoint #2 @766px   
 -------------------------------------------
     
-::  8.0 Media Breakpoint #3 @500px     
+::  8.0 Media Breakpoint #3 @633px      
+-------------------------------------------
+    
+::  9.0 Media Breakpoint #4 @500px     
 -------------------------------------------
     
 */
@@ -231,7 +234,7 @@ h2{
 .Main_Search #home-header {
 
   z-index: -1;
-  height: 80%;
+  height: 70%;
 
   background: url("../images/food.jpg") no-repeat ;
   background-size: 100% 100%;
@@ -240,7 +243,7 @@ h2{
 
 .middle{
     position: absolute;
-    top: 50%;
+    top: 19%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -252,14 +255,32 @@ h2{
     width: 85%;
     color: #FFFFFF;
 }
+.middle h3{
 
+    margin-top: 15px;
+}
+.middle-title {
+
+    font-size: 1.2em;
+    color: #4eaacf;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s all 0s ease;
+}
+.middle-title:hover{
+    color: #9EC5D5;
+}
+.middle-about {
+    float:right;
+    font-size: 0.8em;
+}
 .middle-title-1{
-    font-size: 3.8em;  text-align: center;
+    font-size: 3.8em; 
     font-weight: bold;
 }
 .middle-title-2{
     font-weight: bold;
-    font-size: 2.1em;  text-align: center;
+    font-size: 2.1em;  
 }
 .middle-title-3{
     margin-top: 30px;
@@ -273,6 +294,8 @@ h2{
 }
 .middle-form-section {
     text-align: center;
+    position: relative;
+    top: 160px;
 }
 .middle-form-button{
     height: 34.1px;
@@ -300,6 +323,7 @@ h2{
     text-align: center;
     padding-top: 40px;
     letter-spacing: 0.1em;
+
 }
 .search_description h2, 
 .search_description h4{
@@ -319,15 +343,42 @@ h2{
 }
 
 .search_description_options{
-     text-align: center;
+    text-align: center;
     padding-bottom: 40px;
+    margin-top: 40px;
 }
 .searchVenueContainer{
     padding: 0;
     height: 92%;
     position: relative;
     overflow-y: scroll;
+    
 }
+.searchVenueContainer::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.searchVenueContainer::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.searchVenueContainer::-webkit-scrollbar-thumb
+{
+    length: 30px;
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0.44, rgb(122,153,217)),
+                                       color-stop(0.72, rgb(73,125,189)),
+                                       color-stop(0.86, rgb(28,58,148)));
+}
+
 .searchVenueList
 {
     padding: 0;
@@ -374,6 +425,10 @@ h2{
 }
 .searchVenueAddress{
     line-height: 2.4em;
+}
+.SearchVenueLoadingContainer{
+    text-align: center;
+    margin-top: 13px;
 }
 .dropDownSearchList{
     float: left;
@@ -588,15 +643,17 @@ a.userReviewTotalLength{
     margin-right: 12px;
 }
 
+.fa-foursquare{
+    color: #F94877;
+}
 /* ************************************************* */
 /*        6.0 Media Breakpoint #1  @996px            */
 /* ************************************************* */
+
 @media (max-width: 996px) {
     .pull-right{
         float: none!important;
     }
-}
-@media (max-width: 996px) {
      .middle-form{
         width: 30%;
     
@@ -618,9 +675,33 @@ a.userReviewTotalLength{
 
 }
 /* ************************************************* */
-/*        7.0 Media Breakpoint #2  @633px            */
+/*        7.0 Media Breakpoint #2  @768px            */
 /* ************************************************* */
+@media (max-width: 768px) {
+     .middle {
+        top: 26%;
+    }
+    #home-header{
+        height: 73%;
+    }
+    .middle-form-section{
+        top: 120px;
+    }
+     .middle-title-1{
+        font-size: 2em; ;
+    }
+    .middle-title-2{
+        font-size: 1.3em; 
+    }
+    .middle-title-3{
+        font-size: 0.8em; 
+    }
+}
 
+
+/* ************************************************* */
+/*        8.0 Media Breakpoint #3  @633px            */
+/* ************************************************* */
 @media (max-width: 633px) {
     .businessInformationContainer{
         float: initial;
@@ -631,20 +712,12 @@ a.userReviewTotalLength{
         margin-top:0;
         text-align: center;
     }
-    .middle-title-1{
-        font-size: 2em; ;
-    }
-    .middle-title-2{
-        font-size: 1.3em; 
-    }
-    .middle-title-3{
-        font-size: 0.8em; 
-    }
+
     
 }
 
 /* ************************************************* */
-/*        8.0 Media Breakpoint #3  @500px            */
+/*        9.0 Media Breakpoint #4  @500px            */
 /* ************************************************* */
 
 @media (max-width: 500px) {
