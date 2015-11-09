@@ -19,7 +19,27 @@
 					url: '/search/:type/:latLng',
 					templateUrl: 'src/js/app/SearchVenue/templates/Main.tpl.html',
 					controller: 'SearchVenueCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+
+						Venues: ['$stateParams', 'FSDataService', function( $stateParams, FSDataService ) {
+
+							return FSDataService
+								.getVenueLocationsByType($stateParams.type, $stateParams.latLng)
+								.then(function(response) {
+									if( response ) {
+										return response;
+									}
+							
+								})
+								.catch(function(error){
+									console.log(error);
+								});
+		
+
+						}]
+
+					}
 
 				})
 				.state('venue', {

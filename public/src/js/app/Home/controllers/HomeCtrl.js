@@ -14,7 +14,6 @@
 
 			vm.validResponse = true;
 			vm.errorResponse = false;
-			vm.locationResponse = false;
 
 			vm.searchRequest = function(foodType, location) {
 
@@ -46,7 +45,7 @@
 					.checkForVenues(foodType, ll)
 					.then(function (response) {
 						if( response ) {
-							$timeout(function() {
+						
 								vm.validResponse = true;
 
 								/*
@@ -56,17 +55,16 @@
 								*/
 								$state.transitionTo('main', {type: foodType, latLng: ll});
 
-							}, 500);
+						
 
 						} else {
-							$timeout(function() {
+						
 
 								//shows error response 
 								//to user in template
 								vm.errorResponse = true;
 								vm.validResponse = true;
 	
-							}, 500);
 
 						}
 					});
