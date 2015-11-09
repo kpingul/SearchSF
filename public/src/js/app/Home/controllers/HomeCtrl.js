@@ -29,12 +29,7 @@
 				//Calls SearchAnalytic Service
 				//to store the search input
 				//into MongoDB for analytics
-
-				// SearchAnalytics
-				// 	.storeData(foodType)
-				// 	.then(function(response) {
-
-				// 	});
+				SearchAnalytics.storeData(foodType);
 
 				vm.validResponse = false;
 
@@ -44,8 +39,7 @@
 				FSDataService
 					.checkForVenues(foodType, ll)
 					.then(function (response) {
-						if( response ) {
-						
+						if( response ) {						
 								vm.validResponse = true;
 
 								/*
@@ -55,11 +49,7 @@
 								*/
 								$state.transitionTo('main', {type: foodType, latLng: ll});
 
-						
-
 						} else {
-						
-
 								//shows error response 
 								//to user in template
 								vm.errorResponse = true;

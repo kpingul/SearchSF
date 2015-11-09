@@ -16,7 +16,8 @@
 			return service;
 
 			function storeData(query) {
-				return $http.post('/api/data', {title: query})
+				$http
+					.post('/api/data', {title: query})
 					.then(function (response) {
 						
 					})
