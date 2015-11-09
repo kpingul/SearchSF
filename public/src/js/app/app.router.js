@@ -23,9 +23,11 @@
 					resolve: {
 
 						Venues: ['$stateParams', 'FSDataService', function( $stateParams, FSDataService ) {
+							var type 	= $stateParams.type,
+								latLng  =  $stateParams.latLng;
 
 							return FSDataService
-								.getVenueLocationsByType($stateParams.type, $stateParams.latLng)
+								.getVenueLocationsByType(type, latLng)
 								.then(function(response) {
 									if( response ) {
 										return response;
@@ -35,7 +37,6 @@
 								.catch(function(error){
 									console.log(error);
 								});
-		
 						}]
 
 					}
@@ -47,12 +48,13 @@
 					controller: 'SingleVenueCtrl',
 					controllerAs: 'vm',
 					resolve: {
+						
 						SingleVenueData: ['$stateParams', 'FSDataService', function($stateParams, FSDataService) {
 							var venue   = {},
 								venueID = $stateParams.venueID; 
 								
 							return FSDataService
-									.getVenue(venueID)
+										.getVenue(venueID)
 										.then(function(response) {
 											venue = response.data.response.venue;
 											return venue;
@@ -67,13 +69,13 @@
 							var venueID = $stateParams.venueID;
 							
 							return FSDataService
-							 .getSimilarVenues(venueID)
-							 	.then(function(response) {
-									return response.data.response.similarVenues.items;
-							 	})
-							 	.catch(function(error){
-							 		return error;
-							 	});
+								 		.getSimilarVenues(venueID)
+								 		.then(function(response) {
+											return response.data.response.similarVenues.items;
+									 	})
+									 	.catch(function(error){
+									 		return error;
+									 	});
 
 						}]
 					}
