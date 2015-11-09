@@ -21,13 +21,9 @@
 			vm.toggleVenues = false;
 			MapService.getSearchVenueMap(Venues);
 			vm.allMarkers = MapService.getAllMarkers();
-
-
-			/**
-			 * @pre receives value and number of times to duplicate
-			 * @post returns a string of value (x) times
-			 */
 			
+			// Returns a duplicate of val 
+			//(x) amount of times
 			vm.duplicate = function(val, times){
 				var str = "",
 					i;

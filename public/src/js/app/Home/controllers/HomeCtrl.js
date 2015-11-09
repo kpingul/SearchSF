@@ -6,12 +6,11 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics', '$window', '$http'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics'];
 
-		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics, $window, $http){
+		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics){
 			
 			var vm = this;
-
 			vm.validResponse = true;
 			vm.errorResponse = false;
 
@@ -40,22 +39,19 @@
 					.checkForVenues(foodType, ll)
 					.then(function (response) {
 						if( response ) {						
-								vm.validResponse = true;
-
-								/*
-									redirects user to main and passes
-									to the state parameters the foodtype
-									search term and latitute/longitude
-								*/
-								$state.transitionTo('main', {type: foodType, latLng: ll});
+							vm.validResponse = true;
+					
+							//redirects user to main and passes
+							//to the state parameters the foodtype
+							//search term and latitute/longitude
+							$state.transitionTo('main', {type: foodType, latLng: ll});
 
 						} else {
-								//shows error response 
-								//to user in template
-								vm.errorResponse = true;
-								vm.validResponse = true;
-	
 
+							//shows error response 
+							//to user in template
+							vm.errorResponse = true;
+							vm.validResponse = true;
 						}
 					});
 				

@@ -10,7 +10,7 @@
 
 		function FSDataService($http){
 
-			var service = {
+			var FourSquareService = {
 
 				checkForVenues: checkForVenues,
 
@@ -25,48 +25,45 @@
 			};
 
 
-			return service;
+			return FourSquareService;
 	
 			function checkForVenues(foodType, ll) {
 
-
 				//checks for validity of search term
-				return $http
-							.get('/api/venues/' + foodType + '/' + ll)
-							.then(function( response ){
+				return $http.get('/api/venues/' + foodType + '/' + ll)
+					.then(function( response ){
 
-								//checks if there are available venues 
-								//sent back from the server
-								if( response.data.response.groups[0].items.length > 0 ) {
-									return true;
-								} else {
-									return false;
-								}
-							})
-							.catch(function(error){
-								if(error) {
-									return error;
-								}
-							});
+						//checks if there are available venues 
+						//sent back from the server
+						if( response.data.response.groups[0].items.length > 0 ) {
+							return true;
+						} else {
+							return false;
+						}
+					})
+					.catch(function(error){
+						if(error) {
+							return error;
+						}
+					});
 
 			}			
 
 
 			function getVenueLocationsByType(foodType, ll){
-				return $http
-							.get('/api/venues/' + foodType + '/' + ll)
-							.then(function(response){
-								if(response) {
-									var venues = response.data.response.groups[0].items;
-									return venues;
-								}
-							})
-							.catch(function(error){
-								if(error) {
-									return error;
-									
-								}
-							});
+				return $http.get('/api/venues/' + foodType + '/' + ll)
+					.then(function(response){
+						if(response) {
+							var venues = response.data.response.groups[0].items;
+							return venues;
+						}
+					})
+					.catch(function(error){
+						if(error) {
+							return error;
+							
+						}
+					});
 
 			}
 

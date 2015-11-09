@@ -8,13 +8,10 @@
 
 		function MapService(){
 
-			//**	Can Replace in directive because of  
-			//		map canvas dom manipulation
-			//**	instead of service 
-
 			var mapService = {
 
 				getSearchVenueMap: getSearchVenueMap,
+				
 				getAllMarkers: getAllMarkers
 
 			};
