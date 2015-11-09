@@ -6,14 +6,17 @@
 
 		.controller('SingleVenueCtrl', SingleVenueCtrl);
 
-		SingleVenueCtrl.$inject = ['$scope','MapService','slickBreakpoints', 'SingleVenueData', 'SimilarVenueData', '$state', '$timeout', 'FSDataService'];
+		SingleVenueCtrl.$inject = ['$scope','MapService','slickBreakpoints', 'SingleVenueData', 'SimilarVenueData', '$state', '$timeout', 'SingleVenuePhotos'];
 
-		function SingleVenueCtrl($scope,MapService, slickBreakpoints, SingleVenueData, SimilarVenueData, $state,$timeout, FSDataService){
+		function SingleVenueCtrl($scope,MapService, slickBreakpoints, SingleVenueData, SimilarVenueData, $state,$timeout, SingleVenuePhotos){
 			var vm 		 	 = this;
 
 			//Stores the SingleVenueData Service 
 			//implemented in the router 
 			vm.venue  	 	 = SingleVenueData;
+
+	
+			vm.venuePhotos   = SingleVenuePhotos;
 
 			//Limit of user reviews in the template
 			vm.reviewLim 	 = 5;
@@ -28,6 +31,7 @@
 
 			//toggles loading indicator 
 			vm.toggleReviews = false;
+
 
 			//Query to send to MapService
 			vm.mapVenue = [

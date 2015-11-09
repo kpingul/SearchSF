@@ -65,6 +65,49 @@
 
 						}],
 
+						SingleVenuePhotos: ['$stateParams', 'FSDataService', function( $stateParams, FSDataService ) {
+							var photoMixins = [],
+								photoSize   = 'original';
+
+							//Calls the FS Data Service and requests
+							//the venue ID and creates a mixin of photo objects
+							//to be passed into the swipebox jquery plugin
+							return FSDataService.getVenuePhotos($stateParams.venueID)
+
+								.then( function(response) {
+
+									if( response.data ) {
+										return response.data.response.photos.groups[1].items;;
+									}
+								})
+								.then( function(updatedResponse) {
+									
+									updatedResponse.map( function(item, index) {
+
+										//checks for user information since
+										//not all users include a last name or firstName
+										if(item.user.lastName){
+											photoMixins.push({
+												href: item.prefix + photoSize + item.suffix,
+												title: item.user.firstName + ' ' + item.user.lastName
+											});
+
+										}else{
+
+											photoMixins.push({
+												href: item.prefix + photoSize + item.suffix,
+												title: item.user.firstName
+											});
+										}
+
+									});
+
+									return photoMixins;
+									
+								});
+
+						}],
+
 						SimilarVenueData: ['$stateParams', 'FSDataService',function($stateParams, FSDataService) {
 							var venueID = $stateParams.venueID;
 							
