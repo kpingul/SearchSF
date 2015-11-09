@@ -51,7 +51,6 @@
 							 .getSimilarVenues(venueID)
 							 	.then(function(response) {
 									return response.data.response.similarVenues.items;
-
 							 	})
 							 	.catch(function(error){
 							 		return error;

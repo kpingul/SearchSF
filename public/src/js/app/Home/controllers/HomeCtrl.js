@@ -6,9 +6,9 @@
 
 		.controller('HomeCtrl', HomeCtrl);
 
-		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics', '$window'];
+		HomeCtrl.$inject = ['$scope', '$timeout', '$state', 'FSDataService', 'SearchAnalytics', '$window', '$http'];
 
-		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics, $window){
+		function HomeCtrl($scope, $timeout, $state, FSDataService, SearchAnalytics, $window, $http){
 			
 			var vm = this;
 
@@ -30,31 +30,22 @@
 				//Calls SearchAnalytic Service
 				//to store the search input
 				//into MongoDB for analytics
-				SearchAnalytics
-					.storeData(foodType)
-					.then(function(response) {
 
-					});
+				// SearchAnalytics
+				// 	.storeData(foodType)
+				// 	.then(function(response) {
 
+				// 	});
 
 				vm.validResponse = false;
 
 				//Calls FSDataService to 
-				//validate that the query
-				//responds with a 200 repsonse
+				//validate available venue
+				//results based on search terms
 				FSDataService
-					.getVenueLocationsByType(foodType, ll)
-					.then(function( response ) {
-						
-						//checks to see if there are 
-						//any venues based on the search
-						//term
-						if( response.length > 0 ) {
-							
-							//executes to toggle the valid
-							//response in the template 
-							//and redirects user to the search
-							//venue's main template to display results
+					.checkForVenues(foodType, ll)
+					.then(function (response) {
+						if( response ) {
 							$timeout(function() {
 								vm.validResponse = true;
 
@@ -66,11 +57,8 @@
 								$state.transitionTo('main', {type: foodType, latLng: ll});
 
 							}, 500);
+
 						} else {
-							
-							//exectues when there are 
-							//no search results 
-							//returned from server 
 							$timeout(function() {
 
 								//shows error response 
@@ -79,8 +67,10 @@
 								vm.validResponse = true;
 	
 							}, 500);
+
 						}
 					});
+				
 			
 			}
 
@@ -88,3 +78,4 @@
 
 
 }());
+
