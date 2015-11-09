@@ -419,7 +419,10 @@ h2{
 }
 .SearchVenueLoadingContainer{
     text-align: center;
-    margin-top: 13px;
+    margin: 13px 0px;
+}
+.SearchVenueLoadingContainer button {
+    padding: 13px;
 }
 .dropDownSearchList{
     float: left;
