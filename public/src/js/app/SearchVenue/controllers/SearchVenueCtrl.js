@@ -6,9 +6,9 @@
 
 		.controller('SearchVenueCtrl', SearchVenueCtrl);
 
-		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService', '$stateParams', '$timeout', 'Venues'];
+		SearchVenueCtrl.$inject = ['$scope', 'FSDataService','MapService', '$timeout', 'Venues'];
 
-		function SearchVenueCtrl($scope, FSDataService,MapService, $stateParams, $timeout, Venues){
+		function SearchVenueCtrl($scope, FSDataService,MapService, $timeout, Venues){
 			
 			var vm         	= this;
 			vm.venues      	= Venues;
@@ -19,35 +19,11 @@
 			vm.venueLimit 	= 5;
 			vm.loadMoreVenue = false;
 			vm.toggleVenues = false;
-			MapService.getSearchVenueMap(vm.venues);
+			MapService.getSearchVenueMap(Venues);
 			vm.allMarkers = MapService.getAllMarkers();
 
-			vm.actMap = function(lat) {
-				for( var i = 0; i < vm.allMarkers.length; i++) {
-
-					if( vm.allMarkers[i]._latlng.lat == lat ) {
 		
-						vm.allMarkers[i].openPopup();
-					}	
-				}
-			}
 
-			// FSDataService
-			// 	.getVenueLocationsByType($stateParams.type, $stateParams.latLng)
-			// 	.then(function(response) {
-			// 		vm.searchName = vm.searchType
-			// 		vm.venues = response;
-			// 		//Get Map Data 
-			// 		MapService.getSearchVenueMap(response);
-			// 		vm.allMarkers = MapService.getAllMarkers();
-			// 		//show Search Venue Filter
-			// 		vm.venueFilter = true;
-			// 		vm.searchType = "";
-			// 	})
-			// 	.catch(function(error){
-			// 		console.log(error);
-			// 	});
-		
 
 			/**
 			 * @pre receives value and number of times to duplicate
