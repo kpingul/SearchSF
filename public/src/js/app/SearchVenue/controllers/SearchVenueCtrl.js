@@ -22,8 +22,6 @@
 			MapService.getSearchVenueMap(Venues);
 			vm.allMarkers = MapService.getAllMarkers();
 
-		
-
 
 			/**
 			 * @pre receives value and number of times to duplicate
@@ -53,7 +51,7 @@
 				$timeout(function(){
 					vm.toggleVenues = false;
 					vm.venueLimit += 5;
-				}, 700);
+				}, 450);
 			}
 
 		}

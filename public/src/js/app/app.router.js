@@ -5,7 +5,7 @@
 	angular.module('myApp')
 
 		.config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider) {
-
+			// $locationProvider.html5Mode(true);
 			$urlRouterProvider.when('', '/');
 
 			$stateProvider
@@ -36,7 +36,6 @@
 									console.log(error);
 								});
 		
-
 						}]
 
 					}
@@ -79,8 +78,6 @@
 						}]
 					}
 				});
-
-		$locationProvider.html5Mode(true);
 
 
 		}]);

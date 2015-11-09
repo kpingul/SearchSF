@@ -12,15 +12,15 @@
 				<span id="second" class="ball"></span>
 				<span id="third" class="ball"></span>
 			</div>
-			<div class="container-fluid">
+			<div class="containers">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6 searchVenueContainer">
 						<div class="SearchVenueFilterContainer">
 							<h4 ng-if="vm.venueFilter">
-							<p><small>Search Results for <strong>{{vm.query | uppercase}}</strong> near<strong> San Francisco, CA</strong> </small></p>
+				<!-- 			<p><small>Search Results near<strong> San Francisco, CA</strong> </small></p> -->
 							<p><small>Showing <b>{{vm.venues.length}}</b> results</small></p>
 							<button
-								class="btn btn-default btn-md"
+								class="btn btn-primary btn-md"
 								type="button"
 								data-toggle="collapse"
 								data-target="#collapseExample"
