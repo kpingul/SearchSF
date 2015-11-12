@@ -238,7 +238,24 @@ h2{
   background-size: 100% 100%;
     
 }
-
+.Main_Search-about{
+        height: 70vh;
+      z-index: -1;
+  padding: 5px;
+  background: url("../images/about.jpg") no-repeat ;
+  background-size: 100% 100%;
+}
+.middle-title-2-about{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.about-me-section{
+    margin: 40px 0px;
+    text-align: center;
+}
+.about-me-section img {
+        margin-top: 40px;
+}
 #home-header h3 {
     padding: 30px;
 }
