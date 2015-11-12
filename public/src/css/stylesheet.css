@@ -19,17 +19,20 @@ Author: Kirck Pingul
 
 ::  5.0 Single Venue Section 
 -------------------------------------------
+
+::  6.0 About Me Section 
+-------------------------------------------
     
-::  6.0 Media Breakpoint #1 @996px   
+::  7.0 Media Breakpoint #1 @996px   
 -------------------------------------------
 
-::  7.0 Media Breakpoint #2 @766px   
+::  8.0 Media Breakpoint #2 @766px   
 -------------------------------------------
     
-::  8.0 Media Breakpoint #3 @633px      
+::  9.0 Media Breakpoint #3 @633px      
 -------------------------------------------
     
-::  9.0 Media Breakpoint #4 @500px     
+::  10.0 Media Breakpoint #4 @500px     
 -------------------------------------------
     
 */
@@ -238,24 +241,7 @@ h2{
   background-size: 100% 100%;
     
 }
-.Main_Search-about{
-        height: 70vh;
-      z-index: -1;
-  padding: 5px;
-  background: url("../images/about.jpg") no-repeat ;
-  background-size: 100% 100%;
-}
-.middle-title-2-about{
-    font-size: 1.5em;
-    font-weight: 700;
-}
-.about-me-section{
-    margin: 40px 0px;
-    text-align: center;
-}
-.about-me-section img {
-        margin-top: 40px;
-}
+
 #home-header h3 {
     padding: 30px;
 }
@@ -658,7 +644,28 @@ a.userReviewTotalLength{
     color: #F94877;
 }
 /* ************************************************* */
-/*        6.0 Media Breakpoint #1  @996px            */
+/*                 6.0 About Me Section              */
+/* ************************************************* */
+.Main_Search-about{
+        height: 70vh;
+      z-index: -1;
+  padding: 5px;
+  background: url("../images/about.jpg") no-repeat ;
+  background-size: 100% 100%;
+}
+.middle-title-2-about{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.about-me-section{
+    margin: 40px 0px;
+    text-align: center;
+}
+.about-me-section img {
+        margin-top: 40px;
+}
+/* ************************************************* */
+/*        7.0 Media Breakpoint #1  @996px            */
 /* ************************************************* */
 
 @media (max-width: 996px) {
@@ -677,7 +684,7 @@ a.userReviewTotalLength{
     }
 }
 /* ************************************************* */
-/*        7.0 Media Breakpoint #2  @768px            */
+/*        8.0 Media Breakpoint #2  @768px            */
 /* ************************************************* */
 @media (max-width: 767px) {
     #mapCanvas{
@@ -716,7 +723,7 @@ a.userReviewTotalLength{
 }
 
 /* ************************************************* */
-/*        8.0 Media Breakpoint #3  @633px            */
+/*        9.0 Media Breakpoint #3  @633px            */
 /* ************************************************* */
 @media (max-width: 633px) {
     .businessInformationContainer{
@@ -733,7 +740,7 @@ a.userReviewTotalLength{
 }
 
 /* ************************************************* */
-/*        9.0 Media Breakpoint #4  @500px            */
+/*        10.0 Media Breakpoint #4  @500px            */
 /* ************************************************* */
 
 @media (max-width: 500px) {
